@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - MAPPHEX</title>
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="../images/enterprise-icon-192.png" type="image/png">
+  <link rel="stylesheet" href="../hr/hr.css">
+  <style>
+    .login-shell{min-height:100vh;display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,480px)}
+    .login-hero{display:flex;flex-direction:column;justify-content:center;padding:clamp(32px,7vw,72px);background:linear-gradient(135deg,rgba(0,119,255,.18),rgba(91,214,255,.06))}
+    .login-panel{display:grid;place-items:center;padding:28px}
+    .login-card{width:min(100%,420px);background:var(--panel);border:1px solid rgba(255,255,255,.11);border-radius:var(--radius);box-shadow:var(--shadow);padding:28px}
+    .login-brand{display:flex;align-items:center;gap:12px;margin-bottom:26px}.login-brand img{width:56px;height:42px;object-fit:contain}
+    .login-form{display:grid;gap:14px}.login-error{display:none;padding:11px 13px;border-radius:var(--radius-sm);border:1px solid rgba(251,113,133,.35);background:rgba(251,113,133,.12);color:var(--danger);font-size:13px}.login-error.visible{display:block}
+    .login-foot{margin-top:18px;font-size:13px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap}.login-foot a{color:var(--accent-2)}
+    @media(max-width:820px){.login-shell{grid-template-columns:1fr}.login-hero{display:none}}
+  </style>
+</head>
+<body>
+  <main class="login-shell">
+    <section class="login-hero">
+      <div class="login-brand"><img src="../images/enterprise-logo.png" alt=""><div><div class="brand-title">MAPPHEX</div><div class="brand-subtitle">Unified business workspace login</div></div></div>
+      <h1>One login, correct portal.</h1>
+      <p class="muted">The system checks the account role and opens the right workspace for directors, HR, branch managers, department heads, and staff.</p>
+      <div class="grid two" style="margin-top:22px">
+        <article class="card"><h3>Role scoped</h3><p class="muted small">Each user sees only the branch, department, or staff record assigned to them.</p></article>
+        <article class="card"><h3>Business agnostic</h3><p class="muted small">Companies can rename labels and configure departments, branches, fields, and KPIs.</p></article>
+      </div>
+    </section>
+    <section class="login-panel">
+      <form id="login-form" class="login-card login-form" autocomplete="off">
+        <div>
+          <h1>Sign In</h1>
+          <p class="muted">Use the credentials created by the Director.</p>
+        </div>
+        <label class="field">Username<input id="username" required autocomplete="username"></label>
+        <label class="field">Password<input id="password" type="password" required autocomplete="current-password"></label>
+        <div id="login-error" class="login-error" role="alert"></div>
+        <button id="login-btn" class="btn primary" type="submit">Login</button>
+        <div class="login-foot">
+          <a href="../organization/organization-register.html">Register organization</a>
+          <a href="../index.html">Back to public site</a>
+        </div>
+      </form>
+    </section>
+  </main>
+  <script src="auth.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const auth = window.MapphexAuth;
+      const params = new URLSearchParams(location.search);
+      const session = auth.getSession();
+      if (session) {
+        location.href = params.get("redirect") || auth.roleHome(session.role);
+        return;
+      }
+      document.querySelector("#login-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const error = document.querySelector("#login-error");
+        const result = auth.authenticate(document.querySelector("#username").value, document.querySelector("#password").value);
+        if (!result.ok) {
+          error.textContent = result.error;
+          error.classList.add("visible");
+          return;
+        }
+        const next = auth.setSession(result.account);
+        location.href = params.get("redirect") || auth.roleHome(next.role);
+      });
+    });
+  </script>
+</body>
+</html>

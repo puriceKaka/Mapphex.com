@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAPPHEX | One Platform for Every Business Operation</title>
+    <meta
+      name="description"
+      content="MAPPHEX is a modular business platform for HR, branches, departments, staff portals, reports, inventory, finance, and operations across many company types."
+    />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="images/enterprise-icon-192.png" type="image/png" />
+    <link rel="apple-touch-icon" href="images/enterprise-icon-192.png" />
+    <meta name="theme-color" content="#06101f" />
+    <link rel="stylesheet" href="director/director.css" />
+    <link rel="stylesheet" href="home/home.css" />
+  </head>
+  <body data-page="home" class="mapphex-home">
+    <header class="site-nav" data-nav>
+      <a class="site-brand" href="#top" aria-label="MAPPHEX home">
+        <img class="logo-img" src="images/enterprise-logo.png" alt="MAPPHEX logo" />
+        <span>MAPPHEX</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-links" aria-label="Main navigation" data-nav-menu>
+        <a href="#apps">Apps</a>
+        <a href="#roles">Portals</a>
+        <a href="#industries">Industries</a>
+        <a href="#reports">Reports</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#start">Start</a>
+      </nav>
+
+      <div class="site-actions">
+        <a class="btn ghost" href="auth/login.html">Login</a>
+        <a class="btn primary" href="organization/organization-register.html">Register Organization</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="site-hero odoo-hero">
+        <div class="hero-aura hero-aura-left" aria-hidden="true"></div>
+        <div class="hero-aura hero-aura-right" aria-hidden="true"></div>
+
+        <div class="site-hero-copy reveal">
+          <div class="eyebrow">All your business operations on one platform</div>
+          <h1>One connected workspace for any company.</h1>
+          <p>
+            MAPPHEX gives every organization the same clean foundation: HR, branches, departments,
+            staff self-service, reports, finance, inventory, access control, and dashboards. Each company
+            can rename fields, choose modules, and operate according to its own business structure.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary large" href="organization/organization-register.html">Start Your Organization</a>
+            <a class="btn large" href="#apps">Explore Apps</a>
+            <a class="btn ghost large" href="auth/login.html">Sign In</a>
+          </div>
+          <div class="hero-proof">
+            <span>Business-type agnostic</span>
+            <span>Role-based portals</span>
+            <span>Multi-branch ready</span>
+            <span>Configurable reports</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" aria-label="MAPPHEX platform preview">
+          <div class="dashboard-frame suite-preview">
+            <div class="dashboard-topbar">
+              <div>
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+                <span class="window-dot"></span>
+              </div>
+              <span>Organization Workspace</span>
+            </div>
+            <div class="dashboard-body">
+              <aside class="preview-sidebar">
+                <span class="preview-logo">M</span>
+                <span class="preview-line active"></span>
+                <span class="preview-line"></span>
+                <span class="preview-line"></span>
+                <span class="preview-line short"></span>
+              </aside>
+              <div class="preview-main">
+                <div class="preview-kpis">
+                  <article><span>Staff</span><strong>HR</strong></article>
+                  <article><span>Locations</span><strong>BR</strong></article>
+                  <article><span>Reports</span><strong>BI</strong></article>
+                </div>
+                <div class="preview-module-grid">
+                  <article><b>Director</b><span>All access, accounts, strategy</span></article>
+                  <article><b>HR</b><span>Employees, leave, payroll, performance</span></article>
+                  <article><b>Branches</b><span>Inventory, staff, sales, transfers</span></article>
+                  <article><b>Departments</b><span>Budgets, tasks, members, KPIs</span></article>
+                  <article><b>Staff</b><span>Profile, leave, attendance, payslips</span></article>
+                  <article><b>Reports</b><span>Exports, schedules, dashboards</span></article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="apps" class="site-section reveal">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Apps</div>
+            <h2>Install the operations each organization needs.</h2>
+          </div>
+          <p>
+            The modules use generic models and configurable labels, so a school, pharmacy, retailer,
+            clinic, logistics company, or agency can use the same platform without hardcoded industry rules.
+          </p>
+        </div>
+        <div class="app-shelf">
+          <a class="app-tile" href="hr/hr-dashboard.html"><span>HR</span><strong>Human Resources</strong><small>Employees, attendance, leave, payroll, recruitment</small></a>
+          <a class="app-tile" href="branches/branch-directory.html"><span>BR</span><strong>Branches</strong><small>Locations, staff, stock, sales, transfers, assets</small></a>
+          <a class="app-tile" href="departments/departments-hub.html"><span>DP</span><strong>Departments</strong><small>Teams, budgets, tasks, documents, KPIs</small></a>
+          <a class="app-tile" href="reports/reports-hub.html"><span>RP</span><strong>Reports</strong><small>HR, finance, branches, inventory, executive views</small></a>
+          <a class="app-tile" href="director/director-accounts.html"><span>AC</span><strong>Accounts</strong><small>Director-created users, roles, branch and department scopes</small></a>
+          <a class="app-tile" href="staff/staff-portal.html"><span>SS</span><strong>Self-Service</strong><small>Personal profile, attendance, leave, payslips</small></a>
+          <a class="app-tile" href="departments/departments-finance.html"><span>FN</span><strong>Finance</strong><small>Budgets, expenses, payments, reconciliations</small></a>
+          <a class="app-tile" href="branches/branch-inventory.html"><span>IN</span><strong>Inventory</strong><small>Generic stock items, reorder alerts, movements</small></a>
+        </div>
+      </section>
+
+      <section id="roles" class="site-section reveal">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Role Portals</div>
+            <h2>Every user lands in the right workspace.</h2>
+          </div>
+          <p>
+            One smart login checks the account role and routes users to the correct portal. Visibility stays
+            scoped, so people only see the branches, departments, staff records, and reports they are allowed to use.
+          </p>
+        </div>
+        <div class="role-flow">
+          <article class="role-card"><span>01</span><h3>Director</h3><p>Sees everything, creates accounts, manages access, and reviews executive reports.</p></article>
+          <article class="role-card"><span>02</span><h3>HR</h3><p>Manages employees, attendance, leave, payroll, recruitment, reviews, and disciplinary records.</p></article>
+          <article class="role-card"><span>03</span><h3>Branch Manager</h3><p>Works only inside their assigned branch: staff, inventory, sales, finance, transfers, and assets.</p></article>
+          <article class="role-card"><span>04</span><h3>Department Head</h3><p>Controls department members, budget, tasks, documents, KPIs, and department-level reports.</p></article>
+          <article class="role-card"><span>05</span><h3>Staff</h3><p>Uses self-service for their own profile, attendance, leave requests, payslips, and updates.</p></article>
+        </div>
+      </section>
+
+      <section id="industries" class="site-section reveal">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Industries</div>
+            <h2>Built around common business structures, not one industry.</h2>
+          </div>
+        </div>
+        <div class="industry-cloud">
+          <span>Schools</span>
+          <span>Pharmacies</span>
+          <span>Retail shops</span>
+          <span>Clinics</span>
+          <span>Logistics</span>
+          <span>Agencies</span>
+          <span>Manufacturing</span>
+          <span>Nonprofits</span>
+          <span>Hospitality</span>
+          <span>Service companies</span>
+          <span>Warehouses</span>
+          <span>Multi-branch groups</span>
+        </div>
+      </section>
+
+      <section id="reports" class="site-section analytics-section reveal">
+        <div>
+          <div class="eyebrow">Reports</div>
+          <h2>Universal reporting across HR, branches, departments, finance, and inventory.</h2>
+          <p>
+            MAPPHEX reports are designed as a shared engine. The same export and schedule tools can serve
+            any organization type while pulling from the modules that company has enabled.
+          </p>
+          <div class="hero-proof compact">
+            <span>PDF export</span>
+            <span>Excel and CSV</span>
+            <span>Scheduled email</span>
+            <span>Executive dashboard</span>
+          </div>
+        </div>
+        <div class="security-grid">
+          <article><strong>HR Reports</strong><span>Headcount, attendance, leave, payroll, turnover, and recruitment pipeline.</span></article>
+          <article><strong>Branch Reports</strong><span>Performance comparison, revenue, stock levels, sales, and transfer activity.</span></article>
+          <article><strong>Finance Reports</strong><span>Income, expenses, payment methods, outstanding balances, and budgets.</span></article>
+          <article><strong>Inventory Reports</strong><span>Stock movement, low stock, dead stock, reorder alerts, and supplier history.</span></article>
+        </div>
+      </section>
+
+      <section class="site-section split-section reveal">
+        <div>
+          <div class="eyebrow">Setup Flow</div>
+          <h2>Clean structure first, deep interconnection after.</h2>
+        </div>
+        <div class="workflow-steps">
+          <article><b>1</b><span>Organization registers with name, type, director, and workspace settings.</span></article>
+          <article><b>2</b><span>Director creates HR, branch, department, finance, admin, and staff accounts.</span></article>
+          <article><b>3</b><span>Each module stores generic data that can be renamed and configured per company.</span></article>
+          <article><b>4</b><span>Reports connect the modules after the structure is stable and clean.</span></article>
+        </div>
+      </section>
+
+      <section id="pricing" class="site-section reveal">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Subscription Plans</div>
+            <h2>Start with the modules you need, then scale safely.</h2>
+          </div>
+        </div>
+        <div class="pricing-grid">
+          <article class="pricing-card">
+            <span>Starter</span>
+            <h3>Small Teams</h3>
+            <p>Core organization setup, staff access, basic HR, simple reports, and a clean workspace.</p>
+            <a class="btn ghost" href="organization/organization-register.html">Choose Starter</a>
+          </article>
+          <article class="pricing-card highlight">
+            <span>Business</span>
+            <h3>Growing Operations</h3>
+            <p>HR, branches, departments, inventory, finance, role portals, exports, and stronger reporting.</p>
+            <a class="btn primary" href="organization/organization-register.html">Choose Business</a>
+          </article>
+          <article class="pricing-card">
+            <span>Enterprise</span>
+            <h3>Large Organizations</h3>
+            <p>Advanced roles, multi-branch controls, custom fields, scheduled reports, and guided rollout.</p>
+            <a class="btn ghost" href="organization/organization-register.html">Talk to Support</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="start" class="site-section contact-section reveal">
+        <div>
+          <div class="eyebrow">Start</div>
+          <h2>Register once. Build every portal around the company structure.</h2>
+          <p>
+            We are structuring MAPPHEX so the folders, pages, shared data models, and access rules stay clean.
+            After the components are stable, the modules can be connected without duplication or confusing code.
+          </p>
+        </div>
+        <div class="contact-panel">
+          <a class="btn primary large" href="organization/organization-register.html">Register Organization</a>
+          <a class="btn large" href="auth/login.html">Login to Portal</a>
+          <a class="support-link" href="mailto:support@mapphex.com">support@mapphex.com</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <a class="site-brand footer-brand" href="#top" aria-label="MAPPHEX home">
+          <img class="logo-img" src="images/enterprise-logo.png" alt="MAPPHEX logo" />
+          <span>MAPPHEX</span>
+        </a>
+        <p>Modular HR, branch, department, staff, finance, inventory, and report portals for many business types.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#apps">Apps</a>
+        <a href="#roles">Portals</a>
+        <a href="#industries">Industries</a>
+        <a href="#reports">Reports</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#start">Start</a>
+      </div>
+    </footer>
+
+    <script src="platform/enterprise-core.js"></script>
+    <script src="home/home.js?v=3"></script>
+    <script src="platform/pwa.js"></script>
+  </body>
+</html>
