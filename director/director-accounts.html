@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Management - MAPPHEX</title>
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="icon" href="../images/enterprise-icon-192.png" type="image/png">
+  <link rel="stylesheet" href="director.css">
+  <link rel="stylesheet" href="../platform/enterprise-platform.css">
+  <link rel="stylesheet" href="../hr/hr.css">
+</head>
+<body data-page="director-accounts">
+  <header class="topbar">
+    <div class="brand">
+      <button id="menu-toggle" class="icon-btn" type="button" aria-label="Open menu"><span class="icon-hamburger"></span></button>
+      <img class="logo-img" src="../images/enterprise-logo.png" alt="">
+      <div><div class="brand-title">MAPPHEX</div><div class="brand-subtitle muted">Account Management</div></div>
+    </div>
+    <div class="topbar-actions">
+      <span id="user-role-display" class="badge">Director</span>
+      <a class="btn" href="Director.html">Dashboard</a>
+      <button id="logout-btn" class="btn" type="button">Logout</button>
+    </div>
+  </header>
+
+  <div class="portal-shell">
+    <aside id="portal-sidebar" class="portal-sidebar">
+      <div class="sidebar-header"><div class="sidebar-title">Director</div><button id="menu-close" class="icon-btn" type="button"><span class="icon-close"></span></button></div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link" href="Director.html">Dashboard</a>
+        <a class="sidebar-link active" href="director-accounts.html">Manage Accounts</a>
+        <a class="sidebar-link" href="../hr/hr-dashboard.html">HR</a>
+        <a class="sidebar-link" href="../branches/branch-directory.html">Branches</a>
+        <a class="sidebar-link" href="../departments/departments-hub.html">Departments</a>
+        <a class="sidebar-link" href="../reports/reports-hub.html">Reports</a>
+      </nav>
+    </aside>
+    <div id="menu-backdrop" class="menu-backdrop"></div>
+
+    <main class="layout">
+      <section class="panel">
+        <div class="panel-header">
+          <h2>User Accounts</h2>
+          <div class="panel-actions"><button id="new-account-btn" class="btn primary" type="button">Create Account</button></div>
+        </div>
+        <div class="kpis">
+          <article class="kpi"><div class="kpi-label">Total</div><div id="acc-total" class="kpi-value">0</div><div class="kpi-foot muted">All workspace users</div></article>
+          <article class="kpi"><div class="kpi-label">HR</div><div id="acc-hr" class="kpi-value">0</div><div class="kpi-foot muted">Org-wide staff access</div></article>
+          <article class="kpi"><div class="kpi-label">Branch</div><div id="acc-branch" class="kpi-value">0</div><div class="kpi-foot muted">Location scoped</div></article>
+          <article class="kpi"><div class="kpi-label">Staff</div><div id="acc-staff" class="kpi-value">0</div><div class="kpi-foot muted">Self-service only</div></article>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Directory</h2>
+          <div class="panel-actions">
+            <select id="filter-role" class="btn">
+              <option value="">All roles</option>
+              <option value="director">Director</option>
+              <option value="hr">HR</option>
+              <option value="branch">Branch Manager</option>
+              <option value="finance">Finance</option>
+              <option value="operations">Operations</option>
+              <option value="sales">Sales</option>
+              <option value="admin">Admin</option>
+              <option value="staff">Staff</option>
+            </select>
+            <label class="inline-field"><span class="muted">Search</span><input id="account-search" type="search" placeholder="Name or username"></label>
+          </div>
+        </div>
+        <div id="account-list" class="account-list" style="padding:18px"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="account-modal" class="modal-overlay" hidden>
+    <form id="account-form" class="modal-card" style="max-width:620px;width:100%">
+      <div class="modal-header"><h3 id="modal-title">Create Account</h3><button id="modal-close" class="icon-btn" type="button">x</button></div>
+      <div class="modal-body">
+        <div class="form-grid">
+          <label class="field">Full name<input name="name" required></label>
+          <label class="field">Username<input name="username" required></label>
+          <label class="field">Email<input name="email" type="email"></label>
+          <label class="field">Phone<input name="phone"></label>
+          <label class="field">Role<select name="role" id="role-select" required>
+            <option value="">Select role</option>
+            <option value="hr">HR Manager / Officer</option>
+            <option value="branch">Branch Manager</option>
+            <option value="finance">Finance Department</option>
+            <option value="operations">Operations Department</option>
+            <option value="sales">Sales Department</option>
+            <option value="admin">Admin Department</option>
+            <option value="staff">Employee / Staff</option>
+            <option value="director">Director</option>
+          </select></label>
+          <label class="field">Status<select name="status"><option value="active">Active</option><option value="suspended">Suspended</option><option value="inactive">Inactive</option></select></label>
+          <label id="branch-wrap" class="field">Branch<select name="branchId" id="branch-select"></select></label>
+          <label id="department-wrap" class="field">Department<select name="departmentId" id="department-select"></select></label>
+          <label id="employee-wrap" class="field">Employee record<select name="employeeId" id="employee-select"></select></label>
+          <label class="field">Temporary password<input name="password" id="password-input" type="password"></label>
+        </div>
+        <p id="account-error" class="form-error"></p>
+        <div id="credentials-preview" class="empty-state" hidden></div>
+      </div>
+      <div class="modal-footer"><button class="btn" type="button" id="modal-cancel">Cancel</button><button class="btn primary" type="submit">Save Account</button></div>
+    </form>
+  </div>
+
+  <script src="../platform/enterprise-core.js"></script>
+  <script src="../platform/kv-client.js"></script>
+  <script src="../platform/enterprise-store.js"></script>
+  <script src="../platform/enterprise-platform.js"></script>
+  <script src="../platform/ui-menu.js"></script>
+  <script src="../shared/data-models.js"></script>
+  <script src="../auth/auth.js"></script>
+  <script src="../platform/pwa.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (!window.MapphexAuth.guard(["director", "super_admin"])) return;
+      const auth = window.MapphexAuth;
+      const dataApi = window.MapphexData;
+      let editId = null;
+
+      const roleContext = {
+        branch: ["branch-wrap"],
+        finance: ["department-wrap"],
+        operations: ["department-wrap"],
+        sales: ["department-wrap"],
+        admin: ["department-wrap"],
+        staff: ["employee-wrap"],
+        hr: ["employee-wrap"]
+      };
+
+      function optionRows(rows, label) {
+        return `<option value="">${label}</option>` + rows.map((row) => `<option value="${row.id}">${row.name || row.code || row.id}</option>`).join("");
+      }
+
+      function employeeLabel(employee) {
+        return employee.name || [employee.firstName, employee.lastName].filter(Boolean).join(" ") || employee.id;
+      }
+
+      function populate() {
+        document.querySelector("#branch-select").innerHTML = optionRows(dataApi.getBranches(), "No branch / select branch");
+        document.querySelector("#department-select").innerHTML = optionRows(dataApi.getDepartments(), "No department / select department");
+        document.querySelector("#employee-select").innerHTML = `<option value="">No employee / select employee</option>` + dataApi.getEmployees().map((employee) => `<option value="${employee.id}">${employeeLabel(employee)}</option>`).join("");
+      }
+
+      function contextText(account) {
+        const branch = dataApi.getBranches().find((item) => item.id === account.branchId);
+        const department = dataApi.getDepartments().find((item) => item.id === account.departmentId);
+        const employee = dataApi.getEmployees().find((item) => item.id === account.employeeId);
+        return [branch?.name, department?.name, employee ? employeeLabel(employee) : ""].filter(Boolean).join(" - ") || "No scope assigned";
+      }
+
+      function render() {
+        const query = document.querySelector("#account-search").value.trim().toLowerCase();
+        const role = document.querySelector("#filter-role").value;
+        let accounts = auth.getAccounts();
+        if (role) accounts = accounts.filter((account) => account.role === role);
+        if (query) accounts = accounts.filter((account) => `${account.name} ${account.username} ${account.email}`.toLowerCase().includes(query));
+        const all = auth.getAccounts();
+        document.querySelector("#acc-total").textContent = all.length;
+        document.querySelector("#acc-hr").textContent = all.filter((item) => item.role === "hr").length;
+        document.querySelector("#acc-branch").textContent = all.filter((item) => item.role === "branch").length;
+        document.querySelector("#acc-staff").textContent = all.filter((item) => item.role === "staff").length;
+        document.querySelector("#account-list").innerHTML = accounts.length ? accounts.map((account) => `
+          <article class="account-item">
+            <div class="account-avatar">${(account.name || account.username).slice(0, 2).toUpperCase()}</div>
+            <div class="account-info"><div class="account-name">${account.name || account.username}</div><div class="account-meta">@${account.username} - ${contextText(account)}</div></div>
+            <span class="role-badge ${account.role}">${(auth.ROLE_LABELS[account.role] || account.role)}</span>
+            <span class="status-badge status-${account.status}">${account.status}</span>
+            <div class="account-actions"><button class="btn btn-sm" data-edit="${account.id}" type="button">Edit</button><button class="btn btn-sm danger" data-delete="${account.id}" type="button">Delete</button></div>
+          </article>`).join("") : window.MapphexData.emptyState("No accounts found", "Create role-based accounts for the company team.");
+      }
+
+      function setRoleFields(role) {
+        ["branch-wrap", "department-wrap", "employee-wrap"].forEach((id) => document.querySelector(`#${id}`).style.display = "none");
+        (roleContext[role] || []).forEach((id) => document.querySelector(`#${id}`).style.display = "");
+      }
+
+      function openModal(account) {
+        editId = account?.id || null;
+        populate();
+        document.querySelector("#modal-title").textContent = editId ? "Edit Account" : "Create Account";
+        document.querySelector("#account-form").reset();
+        document.querySelector("#account-error").textContent = "";
+        document.querySelector("#credentials-preview").hidden = true;
+        if (account) {
+          ["name", "username", "email", "phone", "role", "status", "branchId", "departmentId", "employeeId"].forEach((key) => {
+            const field = document.querySelector(`[name="${key}"]`);
+            if (field) field.value = account[key] || "";
+          });
+        }
+        setRoleFields(document.querySelector("#role-select").value);
+        document.querySelector("#account-modal").hidden = false;
+      }
+
+      function closeModal() {
+        editId = null;
+        document.querySelector("#account-modal").hidden = true;
+      }
+
+      document.querySelector("#new-account-btn").addEventListener("click", () => openModal());
+      document.querySelector("#modal-close").addEventListener("click", closeModal);
+      document.querySelector("#modal-cancel").addEventListener("click", closeModal);
+      document.querySelector("#role-select").addEventListener("change", (event) => setRoleFields(event.target.value));
+      document.querySelector("#account-search").addEventListener("input", render);
+      document.querySelector("#filter-role").addEventListener("change", render);
+      document.querySelector("#account-list").addEventListener("click", (event) => {
+        const edit = event.target.closest("[data-edit]");
+        const del = event.target.closest("[data-delete]");
+        if (edit) openModal(auth.getAccounts().find((account) => account.id === edit.dataset.edit));
+        if (del && confirm("Delete this account?")) {
+          auth.deleteAccount(del.dataset.delete);
+          render();
+        }
+      });
+      document.querySelector("#account-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const values = Object.fromEntries(new FormData(event.currentTarget).entries());
+        const error = document.querySelector("#account-error");
+        if (!editId && !values.password) {
+          error.textContent = "Temporary password is required for new accounts.";
+          return;
+        }
+        const result = editId ? auth.updateAccount(editId, values) : auth.createAccount(values);
+        if (!result.ok) {
+          error.textContent = result.error;
+          return;
+        }
+        if (!editId) {
+          document.querySelector("#credentials-preview").hidden = false;
+          document.querySelector("#credentials-preview").innerHTML = `<h2>Credentials created</h2><p>Login URL: ../auth/login.html<br>Username: <strong>${values.username}</strong><br>Password: <strong>${values.password}</strong><br>Role: <strong>${values.role}</strong></p>`;
+        } else closeModal();
+        render();
+      });
+
+      populate();
+      render();
+    });
+  </script>
+</body>
+</html>

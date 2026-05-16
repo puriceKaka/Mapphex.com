@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Self-Service - MAPPHEX</title>
+  <link rel="icon" href="../images/enterprise-icon-192.png" type="image/png">
+  <link rel="stylesheet" href="../director/director.css">
+  <link rel="stylesheet" href="../platform/enterprise-platform.css">
+  <link rel="stylesheet" href="../hr/hr.css">
+</head>
+<body data-page="staff-portal">
+  <header class="topbar">
+    <div class="brand">
+      <button id="menu-toggle" class="icon-btn" type="button" aria-label="Open menu"><span class="icon-hamburger"></span></button>
+      <img class="logo-img" src="../images/enterprise-logo.png" alt="">
+      <div><div class="brand-title">Staff Self-Service</div><div class="brand-subtitle muted">Profile, leave, attendance and payslips</div></div>
+    </div>
+    <div class="topbar-actions">
+      <span id="user-role-display" class="badge">Staff</span>
+      <button id="logout-btn" class="btn" type="button">Logout</button>
+    </div>
+  </header>
+
+  <div class="portal-shell">
+    <aside id="portal-sidebar" class="portal-sidebar">
+      <div class="sidebar-header"><div class="sidebar-title">My Workspace</div><button id="menu-close" class="icon-btn" type="button"><span class="icon-close"></span></button></div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-link active" href="#profile">My Profile</a>
+        <a class="sidebar-link" href="#attendance">Attendance</a>
+        <a class="sidebar-link" href="#leave">Leave</a>
+        <a class="sidebar-link" href="#payroll">Payslips</a>
+      </nav>
+    </aside>
+    <div id="menu-backdrop" class="menu-backdrop"></div>
+    <main id="staff-root" class="layout"></main>
+  </div>
+
+  <script src="../platform/enterprise-core.js"></script>
+  <script src="../platform/enterprise-platform.js"></script>
+  <script src="../platform/ui-menu.js"></script>
+  <script src="../shared/data-models.js"></script>
+  <script src="../auth/auth.js"></script>
+  <script src="../platform/pwa.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (!window.MapphexAuth.guard(["super_admin", "director", "hr", "staff"])) return;
+      const session = window.MapphexAuth.getSession();
+      const data = window.MapphexData.load();
+      const employee = data.employees.find((item) => item.id === session.employeeId) || data.employees.find((item) => item.contact === session.email);
+      const root = document.querySelector("#staff-root");
+      if (!employee && session.role === "staff") {
+        root.innerHTML = window.MapphexData.emptyState("No employee record linked", "Ask HR or the Director to link this login account to an employee record.");
+        return;
+      }
+      const profile = employee || { name: session.name || session.username, role: session.role, department: "", branch: "", contact: "" };
+      const payroll = profile.payroll || {};
+      const leave = profile.leave || {};
+      const attendance = profile.attendance || {};
+      root.innerHTML = `
+        <section id="profile" class="panel"><div class="panel-header"><h2>${profile.name}</h2><span class="pill ok">${profile.role || "Staff"}</span></div><div class="panel-body detail-list">
+          ${[["Department", profile.department || "Not set"], ["Branch", profile.branch || "Not set"], ["Contact", profile.contact || "Not set"], ["Contract", profile.contractType || "Not set"]].map(([label, value]) => `<div class="detail-item"><span>${label}</span><strong>${value}</strong></div>`).join("")}
+        </div></section>
+        <section id="attendance" class="panel"><div class="panel-header"><h2>Attendance</h2></div><div class="panel-body detail-list">
+          ${[["Check-in", attendance.checkedIn || "-"], ["Check-out", attendance.checkedOut || "-"], ["Overtime", attendance.overtime || 0], ["Absences", attendance.absences || 0]].map(([label, value]) => `<div class="detail-item"><span>${label}</span><strong>${value}</strong></div>`).join("")}
+        </div></section>
+        <section id="leave" class="panel"><div class="panel-header"><h2>Leave</h2><button class="btn primary" type="button">Apply for leave</button></div><div class="panel-body detail-list">
+          ${[["Annual", leave.annual || 0], ["Sick", leave.sick || 0], ["Other", leave.other || 0], ["Unpaid", leave.unpaid || 0]].map(([label, value]) => `<div class="detail-item"><span>${label}</span><strong>${value}</strong></div>`).join("")}
+        </div></section>
+        <section id="payroll" class="panel"><div class="panel-header"><h2>Payslip Summary</h2></div><div class="panel-body detail-list">
+          ${[["Salary", window.MapphexData.money(payroll.salary)], ["Allowances", window.MapphexData.money(payroll.allowances)], ["Deductions", window.MapphexData.money(payroll.deductions)], ["Net", window.MapphexData.money((payroll.salary || 0) + (payroll.allowances || 0) - (payroll.deductions || 0))]].map(([label, value]) => `<div class="detail-item"><span>${label}</span><strong>${value}</strong></div>`).join("")}
+        </div></section>`;
+    });
+  </script>
+</body>
+</html>
