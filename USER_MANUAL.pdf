@@ -1,0 +1,346 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R] /Count 8 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 2461 >>
+stream
+BT /F2 20 Tf 54 728 Td (User Manual) Tj ET
+BT /F2 15 Tf 54 690 Td (System Overview) Tj ET
+BT /F1 11 Tf 54 657 Td (This system has three main portals:) Tj ET
+BT /F1 11 Tf 54 633 Td (- Money Office: manages finance work such as customer bills, supplier bills, payroll, budgets,) Tj ET
+BT /F1 11 Tf 70 617 Td (approvals, and reports.) Tj ET
+BT /F1 11 Tf 54 601 Td (- Selling Office: manages sales work such as possible customers, customers, quotes, orders, customer) Tj ET
+BT /F1 11 Tf 70 585 Td (bills, goals, and sales summaries.) Tj ET
+BT /F1 11 Tf 54 569 Td (- Business Check: shows analytics from Finance and Sales, including business summaries, forecasts,) Tj ET
+BT /F1 11 Tf 70 553 Td (warnings, and downloads.) Tj ET
+BT /F1 11 Tf 54 529 Td (The system is designed to open clean and empty. No customer, supplier, bill, sales, or analytics) Tj ET
+BT /F1 11 Tf 70 513 Td (records are stored in the browser. Data appears only after a user adds it during the current) Tj ET
+BT /F1 11 Tf 70 497 Td (session or imports a backup file.) Tj ET
+BT /F2 15 Tf 54 473 Td (Login And Registration) Tj ET
+BT /F1 11 Tf 54 440 Td (1. Open the system home page.) Tj ET
+BT /F1 11 Tf 54 424 Td (2. Choose the portal you want to use:) Tj ET
+BT /F1 11 Tf 54 408 Td (- Money Office) Tj ET
+BT /F1 11 Tf 54 392 Td (- Selling Office) Tj ET
+BT /F1 11 Tf 54 376 Td (- Business Check) Tj ET
+BT /F1 11 Tf 54 360 Td (3. Click Register if it is your first time in that browser session.) Tj ET
+BT /F1 11 Tf 54 344 Td (4. Enter your full name, role, phone, email, password, and confirm password.) Tj ET
+BT /F1 11 Tf 54 328 Td (5. Click Register.) Tj ET
+BT /F1 11 Tf 54 312 Td (6. Go back to Login.) Tj ET
+BT /F1 11 Tf 54 296 Td (7. Enter the same name or email and password.) Tj ET
+BT /F1 11 Tf 54 280 Td (8. Click Login.) Tj ET
+BT /F1 11 Tf 54 256 Td (Registration is temporary. If the page is refreshed or reopened, the user may need to register) Tj ET
+BT /F1 11 Tf 70 240 Td (again because browser storage has been removed.) Tj ET
+BT /F2 15 Tf 54 216 Td (Currency Selection) Tj ET
+BT /F1 11 Tf 54 183 Td (The currency selector lets the user choose a country and currency.) Tj ET
+BT /F1 11 Tf 54 159 Td (Example:) Tj ET
+BT /F1 11 Tf 54 135 Td (- Kenya - KES) Tj ET
+BT /F1 11 Tf 54 119 Td (- United States - USD) Tj ET
+BT /F1 11 Tf 54 103 Td (- Lebanon - LBP) Tj ET
+BT /F1 11 Tf 54 79 Td (When a currency is selected, visible money values use that currency label. The currency list is) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 1867 >>
+stream
+BT /F1 11 Tf 70 734 Td (configuration data, not customer or database data.) Tj ET
+BT /F2 15 Tf 54 710 Td (Money Office) Tj ET
+BT /F1 11 Tf 54 677 Td (The Money Office is used for finance operations.) Tj ET
+BT /F2 13 Tf 54 653 Td (Home) Tj ET
+BT /F1 11 Tf 54 622 Td (The finance home shows finance dashboard buttons such as:) Tj ET
+BT /F1 11 Tf 54 598 Td (- Available money) Tj ET
+BT /F1 11 Tf 54 582 Td (- Money earned) Tj ET
+BT /F1 11 Tf 54 566 Td (- Money spent) Tj ET
+BT /F1 11 Tf 54 550 Td (- Money left) Tj ET
+BT /F1 11 Tf 54 534 Td (- Waiting customer bills) Tj ET
+BT /F1 11 Tf 54 518 Td (- Waiting approvals) Tj ET
+BT /F1 11 Tf 54 502 Td (- Budget spent) Tj ET
+BT /F1 11 Tf 54 486 Td (- Budget left) Tj ET
+BT /F1 11 Tf 54 470 Td (- Recent money activity) Tj ET
+BT /F1 11 Tf 54 454 Td (- Money in and out) Tj ET
+BT /F1 11 Tf 54 430 Td (The dashboard starts empty. Values update when finance records are added.) Tj ET
+BT /F2 13 Tf 54 406 Td (Customer Bills) Tj ET
+BT /F1 11 Tf 54 375 Td (Use this section to create and manage bills that customers should pay.) Tj ET
+BT /F1 11 Tf 54 351 Td (Main actions:) Tj ET
+BT /F1 11 Tf 54 327 Td (- Add a customer bill.) Tj ET
+BT /F1 11 Tf 54 311 Td (- Edit a customer bill.) Tj ET
+BT /F1 11 Tf 54 295 Td (- Delete a customer bill.) Tj ET
+BT /F1 11 Tf 54 279 Td (- Mark a bill as paid.) Tj ET
+BT /F1 11 Tf 54 263 Td (- Filter bills by status.) Tj ET
+BT /F1 11 Tf 54 247 Td (- Export or print the bill list.) Tj ET
+BT /F1 11 Tf 54 223 Td (Customer bill statuses include:) Tj ET
+BT /F1 11 Tf 54 199 Td (- Paid) Tj ET
+BT /F1 11 Tf 54 183 Td (- Unpaid) Tj ET
+BT /F1 11 Tf 54 167 Td (- Overdue) Tj ET
+BT /F1 11 Tf 54 151 Td (- Pending) Tj ET
+BT /F2 13 Tf 54 127 Td (Supplier Bills) Tj ET
+BT /F1 11 Tf 54 96 Td (Use this section to manage bills the company must pay to suppliers.) Tj ET
+BT /F1 11 Tf 54 72 Td (Main actions:) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+9 0 obj
+<< /Length 1922 >>
+stream
+BT /F1 11 Tf 54 734 Td (- Add a supplier bill.) Tj ET
+BT /F1 11 Tf 54 718 Td (- Edit a supplier bill.) Tj ET
+BT /F1 11 Tf 54 702 Td (- Delete a supplier bill.) Tj ET
+BT /F1 11 Tf 54 686 Td (- Mark a supplier bill as paid.) Tj ET
+BT /F1 11 Tf 54 670 Td (- Filter supplier bills by status.) Tj ET
+BT /F1 11 Tf 54 654 Td (- Export or print supplier bill records.) Tj ET
+BT /F2 13 Tf 54 630 Td (Budgets) Tj ET
+BT /F1 11 Tf 54 599 Td (The budget area is for viewing and downloading budget information.) Tj ET
+BT /F1 11 Tf 54 575 Td (Main actions:) Tj ET
+BT /F1 11 Tf 54 551 Td (- View team budgets.) Tj ET
+BT /F1 11 Tf 54 535 Td (- Compare planned and actual spending.) Tj ET
+BT /F1 11 Tf 54 519 Td (- Check budget requests.) Tj ET
+BT /F1 11 Tf 54 503 Td (- Review spending limits.) Tj ET
+BT /F1 11 Tf 54 487 Td (- Download budget table.) Tj ET
+BT /F1 11 Tf 54 471 Td (- Print budget information.) Tj ET
+BT /F1 11 Tf 54 447 Td (The budget table starts empty until data is added or imported.) Tj ET
+BT /F2 13 Tf 54 423 Td (Payroll) Tj ET
+BT /F1 11 Tf 54 392 Td (The payroll section is used for salary records.) Tj ET
+BT /F1 11 Tf 54 368 Td (Main actions:) Tj ET
+BT /F1 11 Tf 54 344 Td (- View employee salary records.) Tj ET
+BT /F1 11 Tf 54 328 Td (- Review allowances.) Tj ET
+BT /F1 11 Tf 54 312 Td (- Review deductions.) Tj ET
+BT /F1 11 Tf 54 296 Td (- Approve salaries.) Tj ET
+BT /F1 11 Tf 54 280 Td (- Download payroll table.) Tj ET
+BT /F1 11 Tf 54 264 Td (- Print payroll table.) Tj ET
+BT /F1 11 Tf 54 240 Td (The payroll table starts empty.) Tj ET
+BT /F2 13 Tf 54 216 Td (Reports) Tj ET
+BT /F1 11 Tf 54 185 Td (Finance reports can be opened, printed, or downloaded.) Tj ET
+BT /F1 11 Tf 54 161 Td (Supported downloads:) Tj ET
+BT /F1 11 Tf 54 137 Td (- PDF print view) Tj ET
+BT /F1 11 Tf 54 121 Td (- Word document) Tj ET
+BT /F1 11 Tf 54 105 Td (- Excel workbook) Tj ET
+BT /F1 11 Tf 54 81 Td (Finance report examples:) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 9 0 R >>
+endobj
+11 0 obj
+<< /Length 1939 >>
+stream
+BT /F1 11 Tf 54 734 Td (- Profit and loss summary) Tj ET
+BT /F1 11 Tf 54 718 Td (- What we own and owe) Tj ET
+BT /F1 11 Tf 54 702 Td (- Money in/out summary) Tj ET
+BT /F1 11 Tf 54 686 Td (- Balance check summary) Tj ET
+BT /F1 11 Tf 54 670 Td (- Tax summaries) Tj ET
+BT /F1 11 Tf 54 654 Td (- Spending summary) Tj ET
+BT /F1 11 Tf 54 638 Td (- Money earned summary) Tj ET
+BT /F1 11 Tf 54 622 Td (- Monthly money summary) Tj ET
+BT /F1 11 Tf 54 606 Td (- Budget summary) Tj ET
+BT /F1 11 Tf 54 590 Td (- Salary summary) Tj ET
+BT /F2 13 Tf 54 566 Td (Approvals) Tj ET
+BT /F1 11 Tf 54 535 Td (The approvals area is used to review requests before they are accepted.) Tj ET
+BT /F1 11 Tf 54 511 Td (Approval types include:) Tj ET
+BT /F1 11 Tf 54 487 Td (- Approve customer bills) Tj ET
+BT /F1 11 Tf 54 471 Td (- Approve spending) Tj ET
+BT /F1 11 Tf 54 455 Td (- Approve purchases) Tj ET
+BT /F1 11 Tf 54 439 Td (- Approve budgets) Tj ET
+BT /F1 11 Tf 54 423 Td (- Approve payments) Tj ET
+BT /F1 11 Tf 54 407 Td (- Approve salaries) Tj ET
+BT /F1 11 Tf 54 391 Td (- Approve money entries) Tj ET
+BT /F1 11 Tf 54 375 Td (- Approve suppliers) Tj ET
+BT /F2 15 Tf 54 351 Td (Selling Office) Tj ET
+BT /F1 11 Tf 54 318 Td (The Selling Office is used for sales operations.) Tj ET
+BT /F2 13 Tf 54 294 Td (Home) Tj ET
+BT /F1 11 Tf 54 263 Td (The sales home includes clickable dashboard buttons:) Tj ET
+BT /F1 11 Tf 54 239 Td (- Total sales) Tj ET
+BT /F1 11 Tf 54 223 Td (- Money from sales this month) Tj ET
+BT /F1 11 Tf 54 207 Td (- New possible customers) Tj ET
+BT /F1 11 Tf 54 191 Td (- Sales still open) Tj ET
+BT /F1 11 Tf 54 175 Td (- Sales completed) Tj ET
+BT /F1 11 Tf 54 159 Td (- Buying customers) Tj ET
+BT /F1 11 Tf 54 143 Td (- Sales goal progress) Tj ET
+BT /F1 11 Tf 54 127 Td (- Top customers) Tj ET
+BT /F1 11 Tf 54 111 Td (- Recent activities) Tj ET
+BT /F1 11 Tf 54 87 Td (The dashboard starts empty. It updates after sales records are added.) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 11 0 R >>
+endobj
+13 0 obj
+<< /Length 1827 >>
+stream
+BT /F2 13 Tf 54 734 Td (Add Sales Records) Tj ET
+BT /F1 11 Tf 54 703 Td (The sales workspace has forms for:) Tj ET
+BT /F1 11 Tf 54 679 Td (- Add possible customer) Tj ET
+BT /F1 11 Tf 54 663 Td (- Add customer) Tj ET
+BT /F1 11 Tf 54 647 Td (- Add price quote) Tj ET
+BT /F1 11 Tf 54 631 Td (- Add order) Tj ET
+BT /F1 11 Tf 54 607 Td (Each form creates a sales record in the sales table.) Tj ET
+BT /F2 13 Tf 54 583 Td (Sales Table Actions) Tj ET
+BT /F1 11 Tf 54 552 Td (Each sales record can have these actions:) Tj ET
+BT /F1 11 Tf 54 528 Td (- View: opens the customer or sales record details.) Tj ET
+BT /F1 11 Tf 54 512 Td (- Edit: updates the record.) Tj ET
+BT /F1 11 Tf 54 496 Td (- Delete: removes the record.) Tj ET
+BT /F1 11 Tf 54 480 Td (- Convert: changes the record to the next stage.) Tj ET
+BT /F1 11 Tf 54 456 Td (Conversion flow:) Tj ET
+BT /F1 11 Tf 54 432 Td (1. Possible customer converts to customer.) Tj ET
+BT /F1 11 Tf 54 416 Td (2. Price quote converts to order.) Tj ET
+BT /F1 11 Tf 54 400 Td (3. Order converts to customer bill.) Tj ET
+BT /F2 13 Tf 54 376 Td (Follow-Up Reminders) Tj ET
+BT /F1 11 Tf 54 345 Td (The system checks follow-up dates.) Tj ET
+BT /F1 11 Tf 54 321 Td (It can show:) Tj ET
+BT /F1 11 Tf 54 297 Td (- Follow-ups due today.) Tj ET
+BT /F1 11 Tf 54 281 Td (- Overdue follow-up warnings.) Tj ET
+BT /F2 13 Tf 54 257 Td (Sales Activity Log) Tj ET
+BT /F1 11 Tf 54 226 Td (The activity log records actions such as:) Tj ET
+BT /F1 11 Tf 54 202 Td (- Adding a record.) Tj ET
+BT /F1 11 Tf 54 186 Td (- Editing a record.) Tj ET
+BT /F1 11 Tf 54 170 Td (- Deleting a record.) Tj ET
+BT /F1 11 Tf 54 154 Td (- Converting a record.) Tj ET
+BT /F1 11 Tf 54 138 Td (- Exporting sales files.) Tj ET
+BT /F2 13 Tf 54 114 Td (Sales Downloads) Tj ET
+BT /F1 11 Tf 54 83 Td (The sales export button downloads:) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 13 0 R >>
+endobj
+15 0 obj
+<< /Length 1817 >>
+stream
+BT /F1 11 Tf 54 734 Td (- PDF print view) Tj ET
+BT /F1 11 Tf 54 718 Td (- Word document) Tj ET
+BT /F1 11 Tf 54 702 Td (- Excel file) Tj ET
+BT /F1 11 Tf 54 686 Td (- JSON backup file) Tj ET
+BT /F1 11 Tf 54 662 Td (The JSON backup file is used for importing sales records later.) Tj ET
+BT /F2 15 Tf 54 638 Td (Business Check) Tj ET
+BT /F1 11 Tf 54 605 Td (The Business Check portal shows analytics from Finance and Sales data.) Tj ET
+BT /F2 13 Tf 54 581 Td (Dashboard) Tj ET
+BT /F1 11 Tf 54 550 Td (The dashboard includes:) Tj ET
+BT /F1 11 Tf 54 526 Td (- Total money earned) Tj ET
+BT /F1 11 Tf 54 510 Td (- Total sales) Tj ET
+BT /F1 11 Tf 54 494 Td (- Total money spent) Tj ET
+BT /F1 11 Tf 54 478 Td (- Profit percentage) Tj ET
+BT /F1 11 Tf 54 462 Td (- Active customers) Tj ET
+BT /F1 11 Tf 54 446 Td (- Sales growth) Tj ET
+BT /F1 11 Tf 54 430 Td (- Money in and out) Tj ET
+BT /F1 11 Tf 54 414 Td (- Monthly work result) Tj ET
+BT /F1 11 Tf 54 390 Td (All dashboard values start empty and update from current Finance and Sales records.) Tj ET
+BT /F2 13 Tf 54 366 Td (Analytics Sections) Tj ET
+BT /F1 11 Tf 54 335 Td (Clickable analytics sections include:) Tj ET
+BT /F1 11 Tf 54 311 Td (- Key Numbers) Tj ET
+BT /F1 11 Tf 54 295 Td (- Money Check) Tj ET
+BT /F1 11 Tf 54 279 Td (- Sales Check) Tj ET
+BT /F1 11 Tf 54 263 Td (- Customer Check) Tj ET
+BT /F1 11 Tf 54 247 Td (- Forecasts) Tj ET
+BT /F1 11 Tf 54 231 Td (- Business Summaries) Tj ET
+BT /F1 11 Tf 54 215 Td (- Download Files) Tj ET
+BT /F2 13 Tf 54 191 Td (Alerts And Warnings) Tj ET
+BT /F1 11 Tf 54 160 Td (Analytics can show warnings when:) Tj ET
+BT /F1 11 Tf 54 136 Td (- Sales growth is low.) Tj ET
+BT /F1 11 Tf 54 120 Td (- Spending is high.) Tj ET
+BT /F1 11 Tf 54 104 Td (- Customers need follow-up.) Tj ET
+BT /F1 11 Tf 54 88 Td (- Profit is dropping.) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 15 0 R >>
+endobj
+17 0 obj
+<< /Length 1867 >>
+stream
+BT /F2 13 Tf 54 734 Td (Forecasts) Tj ET
+BT /F1 11 Tf 54 703 Td (Forecast details include:) Tj ET
+BT /F1 11 Tf 54 679 Td (- Expected sales) Tj ET
+BT /F1 11 Tf 54 663 Td (- Expected spending) Tj ET
+BT /F1 11 Tf 54 647 Td (- Expected profit) Tj ET
+BT /F1 11 Tf 54 631 Td (- Expected customers) Tj ET
+BT /F2 13 Tf 54 607 Td (Analytics Downloads) Tj ET
+BT /F1 11 Tf 54 576 Td (Supported analytics downloads:) Tj ET
+BT /F1 11 Tf 54 552 Td (- Excel) Tj ET
+BT /F1 11 Tf 54 536 Td (- PDF) Tj ET
+BT /F1 11 Tf 54 520 Td (- CSV) Tj ET
+BT /F1 11 Tf 54 504 Td (- Word reports) Tj ET
+BT /F2 15 Tf 54 480 Td (Import And Export) Tj ET
+BT /F1 11 Tf 54 447 Td (The system supports backup/import tools.) Tj ET
+BT /F1 11 Tf 54 423 Td (Export can create files for:) Tj ET
+BT /F1 11 Tf 54 399 Td (- Sales records) Tj ET
+BT /F1 11 Tf 54 383 Td (- Finance records) Tj ET
+BT /F1 11 Tf 54 367 Td (- Analytics records) Tj ET
+BT /F1 11 Tf 54 343 Td (Import can load a valid backup file back into the current session.) Tj ET
+BT /F1 11 Tf 54 319 Td (Because browser storage is removed, imported data stays only while the page is open.) Tj ET
+BT /F2 15 Tf 54 295 Td (Empty Data Behavior) Tj ET
+BT /F1 11 Tf 54 262 Td (The system no longer keeps local browser data.) Tj ET
+BT /F1 11 Tf 54 238 Td (This means:) Tj ET
+BT /F1 11 Tf 54 214 Td (- No records remain after refresh unless a real backend database is added later.) Tj ET
+BT /F1 11 Tf 54 198 Td (- No old customer or supplier examples should appear.) Tj ET
+BT /F1 11 Tf 54 182 Td (- No browser localStorage or sessionStorage is used.) Tj ET
+BT /F1 11 Tf 54 166 Td (- Tables open empty.) Tj ET
+BT /F1 11 Tf 54 150 Td (- Dashboard figures start at 0.) Tj ET
+BT /F2 15 Tf 54 126 Td (Recommended Workflow) Tj ET
+BT /F1 11 Tf 54 93 Td (1. Register and log into the needed portal.) Tj ET
+BT /F1 11 Tf 54 77 Td (2. Select the country currency.) Tj ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 17 0 R >>
+endobj
+19 0 obj
+<< /Length 884 >>
+stream
+BT /F1 11 Tf 54 734 Td (3. Add finance or sales records.) Tj ET
+BT /F1 11 Tf 54 718 Td (4. Use dashboard buttons to view summaries.) Tj ET
+BT /F1 11 Tf 54 702 Td (5. Use edit, delete, approve, mark paid, and convert actions where needed.) Tj ET
+BT /F1 11 Tf 54 686 Td (6. Download reports when required.) Tj ET
+BT /F1 11 Tf 54 670 Td (7. Export a backup before closing the page if you need to keep the session data.) Tj ET
+BT /F2 15 Tf 54 646 Td (Important Notes) Tj ET
+BT /F1 11 Tf 54 613 Td (- The current version is front-end only.) Tj ET
+BT /F1 11 Tf 54 597 Td (- There is no permanent database connected.) Tj ET
+BT /F1 11 Tf 54 581 Td (- To keep records permanently, a backend database must be added.) Tj ET
+BT /F1 11 Tf 54 565 Td (- Until a database is added, exports are the only way to keep records after closing or refreshing the) Tj ET
+BT /F1 11 Tf 70 549 Td (system.) Tj ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 19 0 R >>
+endobj
+xref
+0 21
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000169 00000 n 
+0000000239 00000 n 
+0000000314 00000 n 
+0000002827 00000 n 
+0000002963 00000 n 
+0000004882 00000 n 
+0000005018 00000 n 
+0000006992 00000 n 
+0000007129 00000 n 
+0000009121 00000 n 
+0000009259 00000 n 
+0000011139 00000 n 
+0000011277 00000 n 
+0000013147 00000 n 
+0000013285 00000 n 
+0000015205 00000 n 
+0000015343 00000 n 
+0000016279 00000 n 
+trailer
+<< /Size 21 /Root 1 0 R >>
+startxref
+16417
+%%EOF

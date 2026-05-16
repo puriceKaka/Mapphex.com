@@ -1,0 +1,1471 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finance Portal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="finance.css" />
+  </head>
+  <body data-page-portal="financial">
+    <section class="login-screen" aria-label="Portal login selection">
+      <div class="login-hero">
+        <p class="eyebrow">Secure access</p>
+        <h1>Choose your portal</h1>
+        <p>
+          Sign in to the workspace made for your team: finance, sales, or analytics.
+        </p>
+      </div>
+
+      <div class="login-grid">
+        <form class="login-card finance-login" data-login-target="financial">
+          <span class="login-badge">Finance</span>
+          <h2>Money Office Login</h2>
+          <div class="login-tabs" aria-label="Money Office login choices">
+            <button type="button" data-auth-tab="login">Login</button>
+            <button type="button" data-auth-tab="register">Register</button>
+          </div>
+          <div class="auth-panel login-panel">
+            <label>
+              Login role
+              <select name="loginRole">
+                <option>Finance Manager</option>
+                <option>Accountant</option>
+                <option>Payroll Officer</option>
+                <option>Budget Officer</option>
+                <option>Auditor</option>
+              </select>
+            </label>
+            <label>
+              Username
+              <input
+                type="text"
+                name="username"
+                placeholder="Enter finance username"
+                autocomplete="username"
+                required
+              />
+            </label>
+            <label>
+              Password
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter password"
+                autocomplete="current-password"
+                required
+              />
+            </label>
+            <button class="primary-button" type="submit">Login to money office</button>
+          </div>
+          <div class="registration-box auth-panel register-panel">
+            <strong>Register</strong>
+            <label>
+              Full name
+              <input type="text" name="financeRegisterName" placeholder="Enter your full name" />
+            </label>
+            <label>
+              Finance role
+              <select name="financeRegisterRole">
+                <option>Finance Manager</option>
+                <option>Accountant</option>
+                <option>Payroll Officer</option>
+                <option>Budget Officer</option>
+                <option>Auditor</option>
+              </select>
+            </label>
+            <label>
+              Phone
+              <input type="tel" name="financeRegisterPhone" placeholder="" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="financeRegisterEmail" placeholder="finance@example.com" />
+            </label>
+            <label>
+              Password
+              <input type="password" name="financeRegisterPassword" placeholder="Create password" />
+            </label>
+            <label>
+              Confirm password
+              <input type="password" name="financeRegisterConfirmPassword" placeholder="Re-enter the same password" />
+            </label>
+            <button class="mini-button" id="financeRegisterButton" type="button">Register finance user</button>
+            <p class="login-message" id="financeLoginMessage">Register before logging in.</p>
+          </div>
+        </form>
+
+        <form class="login-card sales-login" data-login-target="sales">
+          <span class="login-badge">Sales</span>
+          <h2>Selling Office Login</h2>
+          <div class="login-tabs" aria-label="Selling Office login choices">
+            <button type="button" data-auth-tab="login">Login</button>
+            <button type="button" data-auth-tab="register">Register</button>
+          </div>
+          <div class="auth-panel login-panel">
+            <label>
+              Login role
+              <select name="loginRole">
+                <option>Sales Manager</option>
+                <option>Sales Person</option>
+                <option>Customer Officer</option>
+                <option>Order Officer</option>
+              </select>
+            </label>
+            <label>
+              Username
+              <input
+                type="text"
+                name="username"
+                placeholder="Enter sales username"
+                autocomplete="username"
+                required
+              />
+            </label>
+            <label>
+              Password
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter password"
+                autocomplete="current-password"
+                required
+              />
+            </label>
+            <button class="primary-button" type="submit">Login to selling office</button>
+          </div>
+          <div class="registration-box auth-panel register-panel">
+            <strong>Register</strong>
+            <label>
+              Full name
+              <input type="text" name="salesRegisterName" placeholder="Enter your full name" />
+            </label>
+            <label>
+              Sales role
+              <select name="salesRegisterRole">
+                <option>Sales Manager</option>
+                <option>Sales Person</option>
+                <option>Customer Officer</option>
+                <option>Order Officer</option>
+              </select>
+            </label>
+            <label>
+              Phone
+              <input type="tel" name="salesRegisterPhone" placeholder="" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="salesRegisterEmail" placeholder="sales@example.com" />
+            </label>
+            <label>
+              Password
+              <input type="password" name="salesRegisterPassword" placeholder="Create password" />
+            </label>
+            <label>
+              Confirm password
+              <input type="password" name="salesRegisterConfirmPassword" placeholder="Re-enter the same password" />
+            </label>
+            <button class="mini-button" id="salesRegisterButton" type="button">Register sales user</button>
+            <p class="login-message" id="salesLoginMessage">Register before logging in.</p>
+          </div>
+        </form>
+
+        <form class="login-card analytics-login" data-login-target="analytics">
+          <span class="login-badge">Business Check</span>
+          <h2>Business Check Login</h2>
+          <div class="login-tabs" aria-label="Business Check login choices">
+            <button type="button" data-auth-tab="login">Login</button>
+            <button type="button" data-auth-tab="register">Register</button>
+          </div>
+          <div class="auth-panel login-panel">
+            <label>
+              Login role
+              <select name="loginRole">
+                <option>Business Manager</option>
+                <option>Data Officer</option>
+                <option>Report Officer</option>
+                <option>Business Analyst</option>
+              </select>
+            </label>
+            <label>
+              Username
+              <input
+                type="text"
+                name="username"
+                placeholder="Enter business check username"
+                autocomplete="username"
+                required
+              />
+            </label>
+            <label>
+              Password
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter password"
+                autocomplete="current-password"
+                required
+              />
+            </label>
+            <button class="primary-button" type="submit">Login to business check</button>
+          </div>
+          <div class="registration-box auth-panel register-panel">
+            <strong>Register</strong>
+            <label>
+              Full name
+              <input type="text" name="analyticsRegisterName" placeholder="Enter your full name" />
+            </label>
+            <label>
+              Business Check role
+              <select name="analyticsRegisterRole">
+                <option>Business Manager</option>
+                <option>Data Officer</option>
+                <option>Report Officer</option>
+                <option>Business Analyst</option>
+              </select>
+            </label>
+            <label>
+              Phone
+              <input type="tel" name="analyticsRegisterPhone" placeholder="" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="analyticsRegisterEmail" placeholder="business@example.com" />
+            </label>
+            <label>
+              Password
+              <input type="password" name="analyticsRegisterPassword" placeholder="Create password" />
+            </label>
+            <label>
+              Confirm password
+              <input type="password" name="analyticsRegisterConfirmPassword" placeholder="Re-enter the same password" />
+            </label>
+            <button class="mini-button" id="analyticsRegisterButton" type="button">Register business check user</button>
+            <p class="login-message" id="analyticsLoginMessage">Register before logging in.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <main class="app-shell">
+      <header class="topbar">
+        <button class="menu-button" id="menuButton" type="button" aria-label="Open side menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <strong class="topbar-title" id="topbarTitle">Overview</strong>
+        <span class="welcome-message" id="welcomeMessage"></span>
+        <div class="topbar-actions">
+          <label class="currency-control">
+            Country currency
+            <select id="currencySelect" aria-label="Select country currency"></select>
+          </label>
+          <button class="profile-button" id="logoutButton">Logout</button>
+        </div>
+      </header>
+
+      <aside class="side-menu" id="sideMenu" aria-label="Portal menu" hidden>
+        <div class="side-menu-header">
+          <strong id="sideMenuTitle">Menu</strong>
+          <button class="side-menu-close" id="sideMenuClose" type="button" aria-label="Close side menu">Close</button>
+        </div>
+        <div class="side-menu-group" data-side-menu-group="financial">
+          <button type="button" data-side-finance-target="dashboard">Home</button>
+          <button type="button" data-side-finance-target="general-ledger">Money Records</button>
+          <button type="button" data-side-finance-target="accounts-payable">Bills We Pay</button>
+          <button type="button" data-side-finance-target="accounts-receivable">Bills Customers Pay</button>
+          <button type="button" data-side-finance-target="budgeting">Budgets</button>
+          <button type="button" data-side-finance-target="payroll">Payroll</button>
+          <button type="button" data-side-finance-target="reports">Reports</button>
+          <button type="button" data-side-finance-target="approvals">Approvals</button>
+        </div>
+        <div class="side-menu-group" data-side-menu-group="sales">
+          <button type="button" data-side-sales-target="dashboard">Home</button>
+          <button type="button" data-side-sales-target="leads">Possible Customers</button>
+          <button type="button" data-side-sales-target="customers">Customers</button>
+          <button type="button" data-side-sales-target="opportunities">Possible Sales</button>
+          <button type="button" data-side-sales-target="quotations">Price Quotes</button>
+          <button type="button" data-side-sales-target="orders">Orders</button>
+          <button type="button" data-side-sales-target="sales-invoices">Customer Bills</button>
+          <button type="button" data-side-sales-target="targets">Goals</button>
+          <button type="button" data-side-sales-target="reports">Sales Summaries</button>
+        </div>
+        <div class="side-menu-group" data-side-menu-group="analytics">
+          <button type="button" data-side-analytics-target="dashboard">Home</button>
+          <button type="button" data-side-analytics-target="kpis">Key Numbers</button>
+          <button type="button" data-side-analytics-target="financial-analytics">Money Check</button>
+          <button type="button" data-side-analytics-target="sales-analytics">Sales Check</button>
+          <button type="button" data-side-analytics-target="customer-analytics">Customer Check</button>
+          <button type="button" data-side-analytics-target="forecasting">Forecasts</button>
+          <button type="button" data-side-analytics-target="reports">Business Summaries</button>
+          <button type="button" data-side-analytics-target="data-export">Download Files</button>
+        </div>
+      </aside>
+      <button class="side-menu-backdrop" id="sideMenuBackdrop" type="button" aria-label="Close side menu" hidden></button>
+
+      <section class="portal-section active" id="overview">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Command center</p>
+            <h2>Today's work result</h2>
+          </div>
+          <button class="primary-button">Download summary</button>
+        </div>
+
+        <div class="metric-grid">
+          <article class="metric-card">
+            <span>Total money earned</span>
+            <strong>0</strong>
+            <small class="positive">+12.4% this month</small>
+          </article>
+          <article class="metric-card">
+            <span>Open deals</span>
+            <strong>0</strong>
+            <small class="positive">+18 from last week</small>
+          </article>
+          <article class="metric-card">
+            <span>Operating cost</span>
+            <strong>0</strong>
+            <small class="warning">0</small>
+          </article>
+          <article class="metric-card">
+            <span>Future guess accuracy</span>
+            <strong>0</strong>
+            <small class="positive">Stable trend</small>
+          </article>
+        </div>
+
+        <div class="content-grid">
+          <article class="panel large-panel">
+            <div class="panel-header">
+              <h3>Portal Activity</h3>
+              <span>Live</span>
+            </div>
+            <div class="bar-chart" aria-label="Portal activity chart">
+              <span style="--height: 58%"></span>
+              <span style="--height: 76%"></span>
+              <span style="--height: 45%"></span>
+              <span style="--height: 88%"></span>
+              <span style="--height: 62%"></span>
+              <span style="--height: 94%"></span>
+              <span style="--height: 70%"></span>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-header">
+              <h3>Priority Tasks</h3>
+              <span>6 items</span>
+            </div>
+            <ul class="task-list">
+              <li><span></span>Approve Q2 spending guess</li>
+              <li><span></span>Review sales that may fail</li>
+              <li><span></span>Publish analytics snapshot</li>
+              <li><span></span>Confirm monthly targets</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="portal-section" id="financial">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Money Office</p>
+            <h2>Money records, bills, budgets, salaries, and approvals</h2>
+          </div>
+          <button class="primary-button">New customer bill</button>
+        </div>
+
+        <section class="finance-message-bar" aria-label="Money Office reminders">
+          <div>
+            <span class="finance-message-green">Check unpaid customer bills before the day ends.</span>
+            <span class="finance-message-lime">Review supplier bills that are due soon.</span>
+            <span class="finance-message-teal">Approve pending money requests on time.</span>
+            <span class="finance-message-emerald">Update payment receipts after every payment.</span>
+            <span class="finance-message-gold">Review budgets before spending more money.</span>
+          </div>
+        </section>
+
+        <section class="finance-tools-panel" aria-label="Finance tools">
+          <div class="finance-notices" id="financeNotices" aria-live="polite"></div>
+          <div class="report-actions finance-backup-actions">
+            <button id="exportFinanceBackupButton" type="button">Export backup</button>
+            <button id="importFinanceBackupButton" type="button">Import backup</button>
+            <input id="financeBackupInput" type="file" accept="application/json" hidden />
+          </div>
+        </section>
+
+        <div class="finance-module-panel active" id="finance-dashboard">
+          <section class="finance-summary-box" aria-label="Finance summary">
+            <div class="panel-header">
+              <div>
+                <h3>Finance Summary</h3>
+                <p>Quick view of the most important money items today.</p>
+              </div>
+              <span>Today</span>
+            </div>
+            <div class="finance-summary-grid">
+              <article>
+                <span>Money available</span>
+                <strong>0</strong>
+              </article>
+              <article>
+                <span>Customer bills not paid</span>
+                <strong>0</strong>
+              </article>
+              <article>
+                <span>Supplier bills due</span>
+                <strong>0</strong>
+              </article>
+              <article>
+                <span>Pending approvals</span>
+                <strong>0</strong>
+              </article>
+            </div>
+          </section>
+
+          <section class="finance-overdue-box" aria-label="Overdue bill alerts">
+            <div class="panel-header">
+              <div>
+                <h3>Overdue Alerts</h3>
+                <p>Bills that need quick action today.</p>
+              </div>
+              <span>Needs action</span>
+            </div>
+            <div class="alert-grid">
+              <article>
+                <span>Customer bills overdue</span>
+                <strong>0</strong>
+                <small>6 customers need follow-up</small>
+              </article>
+              <article>
+                <span>Supplier bills overdue</span>
+                <strong>0</strong>
+                <small>2 suppliers need payment review</small>
+              </article>
+              <article>
+                <span>Due this week</span>
+                <strong>0</strong>
+                <small>Pay or follow up before Friday</small>
+              </article>
+            </div>
+          </section>
+
+          <section class="finance-chart-box" aria-label="Simple finance charts">
+            <div class="panel-header">
+              <div>
+                <h3>Money Charts</h3>
+                <p>Simple view of money in, money out, and budget used.</p>
+              </div>
+              <span>May 2026</span>
+            </div>
+            <div class="simple-chart-grid">
+              <article style="--value: 0%">
+                <span>Money in</span>
+                <strong>0</strong>
+                <div class="simple-bar"><i></i></div>
+              </article>
+              <article style="--value: 0%">
+                <span>Money out</span>
+                <strong>0</strong>
+                <div class="simple-bar"><i></i></div>
+              </article>
+              <article style="--value: 0%">
+                <span>Budget used</span>
+                <strong>0</strong>
+                <div class="simple-bar"><i></i></div>
+              </article>
+            </div>
+          </section>
+
+          <div class="dashboard-list">
+            <button type="button" class="dashboard-item" data-dashboard-target="cash-balance">
+              <span>Available money</span>
+              <strong>0</strong>
+              <small class="positive">Healthy reserve</small>
+            </button>
+            <button type="button" class="dashboard-item" data-dashboard-target="total-revenue">
+              <span>Money earned</span>
+              <strong>0</strong>
+              <small class="positive">+12.4% this month</small>
+            </button>
+            <button type="button" class="dashboard-item" data-dashboard-target="total-expenses">
+              <span>Money spent</span>
+              <strong>0</strong>
+              <small class="warning">0</small>
+            </button>
+            <button type="button" class="dashboard-item" data-dashboard-target="profit-loss">
+              <span>Money left</span>
+              <strong>0</strong>
+              <small class="positive">After costs</small>
+            </button>
+            <button type="button" class="dashboard-item" data-dashboard-target="pending-invoices">
+              <span>Waiting customer bills</span>
+              <strong>0</strong>
+              <small class="warning">0</small>
+            </button>
+            <button type="button" class="dashboard-item" data-dashboard-target="pending-approvals">
+              <span>Waiting approvals</span>
+              <strong>0</strong>
+              <small class="warning">0</small>
+            </button>
+            <button type="button" class="dashboard-item" data-dashboard-target="budget-used">
+              <span>Budget spent</span>
+              <strong>0</strong>
+              <small class="positive">Inside monthly limit</small>
+            </button>
+            <button type="button" class="dashboard-item" data-dashboard-target="budget-remaining">
+              <span>Budget left</span>
+              <strong>0</strong>
+              <small class="positive">Available balance</small>
+            </button>
+            <button type="button" class="dashboard-item" data-dashboard-target="recent-transactions">
+              <span>Recent money activity</span>
+              <strong>0</strong>
+              <small>Posted today</small>
+            </button>
+            <button type="button" class="dashboard-item" data-dashboard-target="cash-flow-summary">
+              <span>Money in and out</span>
+              <strong>Positive</strong>
+              <small class="positive">More money came in than went out</small>
+            </button>
+          </div>
+          <section class="dashboard-detail" id="financeDashboardDetail" hidden>
+            <div class="panel-header">
+              <div>
+                <h3 id="financeDashboardDetailTitle">Money Earned</h3>
+                <p id="financeDashboardDetailText">This shows how much money the business made before costs are removed.</p>
+              </div>
+              <span id="financeDashboardDetailLabel">Money home</span>
+            </div>
+            <div class="dashboard-breakdown" id="financeDashboardBreakdown"></div>
+          </section>
+
+          <section class="finance-alerts" aria-label="Finance alerts">
+            <article>
+              <span>Late customer bills</span>
+              <strong>0</strong>
+            </article>
+            <article>
+              <span>Waiting approvals</span>
+              <strong>0</strong>
+            </article>
+            <article>
+              <span>Supplier bills due</span>
+              <strong>0</strong>
+            </article>
+            <article>
+              <span>Budgets near limit</span>
+              <strong>0</strong>
+            </article>
+          </section>
+        </div>
+
+        <div class="finance-module-panel" id="finance-general-ledger">
+          <div class="table-tools one-input">
+            <input id="moneyRecordsSearch" placeholder="Search money records" />
+          </div>
+          <div class="submodule-row" aria-label="Money record sections">
+            <button type="button" class="ledger-item" data-ledger-target="chart-of-accounts">Money account names</button>
+            <button type="button" class="ledger-item" data-ledger-target="journal-entries">Money entries</button>
+            <button type="button" class="ledger-item" data-ledger-target="account-balances">Account balances</button>
+            <button type="button" class="ledger-item" data-ledger-target="debit-records">Money out records</button>
+            <button type="button" class="ledger-item" data-ledger-target="credit-records">Money in records</button>
+            <button type="button" class="ledger-item" data-ledger-target="trial-balance">Balance check</button>
+            <button type="button" class="ledger-item" data-ledger-target="ledger-transactions">All money records</button>
+            <button type="button" class="ledger-item" data-ledger-target="opening-balances">Starting balances</button>
+            <button type="button" class="ledger-item" data-ledger-target="closing-balances">Ending balances</button>
+          </div>
+          <section class="dashboard-detail" id="ledgerDetail" hidden>
+            <div class="panel-header">
+              <div>
+                <h3 id="ledgerDetailTitle">Money Records</h3>
+                <p id="ledgerDetailText">Select a money record item to view details.</p>
+              </div>
+              <span id="ledgerDetailLabel">Money records</span>
+            </div>
+            <div class="dashboard-breakdown" id="ledgerBreakdown"></div>
+          </section>
+        </div>
+
+        <div class="finance-module-panel" id="finance-accounts-payable">
+          <div class="submodule-row" aria-label="Bills we pay sections">
+            <button type="button">Bills from suppliers</button>
+            <button type="button">Supplier list</button>
+            <button type="button">Payment dates</button>
+            <button type="button">Bills waiting</button>
+            <button type="button">Approved bills</button>
+            <button type="button">Bills not approved</button>
+            <button type="button">Paid bills</button>
+            <button type="button">Late supplier payments</button>
+            <button type="button">Payment receipts</button>
+          </div>
+          <section class="erp-workspace">
+            <div class="panel-header">
+              <div>
+                <h3>Supplier Bills</h3>
+                <p>Add and track bills the company must pay to suppliers.</p>
+              </div>
+              <span>Bills we pay</span>
+            </div>
+            <form class="erp-form" id="supplierBillForm">
+              <label>
+                Bill number
+                <input name="billNumber" placeholder="" required />
+              </label>
+              <label>
+                Supplier
+                <input name="supplier" placeholder="" required />
+              </label>
+              <label>
+                Due date
+                <input name="dueDate" type="date" required />
+              </label>
+              <label>
+                Amount
+                <input name="amount" type="number" min="1" placeholder="7800" required />
+              </label>
+              <label>
+                Tax amount
+                <input name="tax" type="number" min="0" placeholder="0" />
+              </label>
+              <label>
+                Payment method
+                <select name="paymentMethod">
+                  <option>Bank transfer</option>
+                  <option>Cash</option>
+                  <option>Card</option>
+                  <option>Cheque</option>
+                  <option>Mobile money</option>
+                </select>
+              </label>
+              <label>
+                Status
+                <select name="status">
+                  <option>Pending</option>
+                  <option>Approved</option>
+                  <option>Paid</option>
+                  <option>Overdue</option>
+                </select>
+              </label>
+              <button class="primary-button" id="billSubmitButton" type="submit">Add bill</button>
+              <button class="mini-button" id="cancelBillEdit" type="button" hidden>Cancel edit</button>
+            </form>
+            <div class="table-tools">
+              <input id="billSearch" placeholder="Search bill or supplier" />
+              <select id="billStatusFilter">
+                <option>All statuses</option>
+                <option>Pending</option>
+                <option>Approved</option>
+                <option>Paid</option>
+                <option>Overdue</option>
+              </select>
+              <button class="mini-button" id="exportBillsButton" type="button">Download CSV</button>
+              <button class="mini-button" id="printBillsButton" type="button">Print</button>
+            </div>
+            <div class="table-panel compact-table">
+              <table id="supplierBillsTable">
+                <thead>
+                  <tr>
+                    <th>Bill</th>
+                    <th>Supplier</th>
+                    <th>Due date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <div class="finance-module-panel" id="finance-accounts-receivable">
+          <div class="submodule-row" aria-label="Bills customers pay sections">
+            <button type="button">Customer bills</button>
+            <button type="button">Customer list</button>
+            <button type="button">Paid customer bills</button>
+            <button type="button">Unpaid customer bills</button>
+            <button type="button">Late customer payments</button>
+            <button type="button">Customer money summaries</button>
+            <button type="button">Payment receipts</button>
+            <button type="button">Money back notes</button>
+            <button type="button">Payment follow-ups</button>
+          </div>
+          <section class="erp-workspace">
+            <div class="panel-header">
+              <div>
+                <h3>Customer Bills</h3>
+                <p>Create and track bills sent to customers.</p>
+              </div>
+              <span>Bills customers pay</span>
+            </div>
+            <form class="erp-form" id="customerInvoiceForm">
+              <label>
+                Customer bill number
+                <input name="invoiceNumber" placeholder="" required />
+              </label>
+              <label>
+                Customer
+                <input name="customer" placeholder="" required />
+              </label>
+              <label>
+                Due date
+                <input name="dueDate" type="date" required />
+              </label>
+              <label>
+                Amount
+                <input name="amount" type="number" min="1" placeholder="12500" required />
+              </label>
+              <label>
+                Tax amount
+                <input name="tax" type="number" min="0" placeholder="0" />
+              </label>
+              <label>
+                Payment method
+                <select name="paymentMethod">
+                  <option>Bank transfer</option>
+                  <option>Cash</option>
+                  <option>Card</option>
+                  <option>Cheque</option>
+                  <option>Mobile money</option>
+                </select>
+              </label>
+              <label>
+                Status
+                <select name="status">
+                  <option>Unpaid</option>
+                  <option>Paid</option>
+                  <option>Overdue</option>
+                  <option>Pending</option>
+                </select>
+              </label>
+              <button class="primary-button" id="invoiceSubmitButton" type="submit">Add customer bill</button>
+              <button class="mini-button" id="cancelInvoiceEdit" type="button" hidden>Cancel edit</button>
+            </form>
+            <div class="table-tools">
+              <input id="invoiceSearch" placeholder="Search customer bill or customer" />
+              <select id="invoiceStatusFilter">
+                <option>All statuses</option>
+                <option>Paid</option>
+                <option>Unpaid</option>
+                <option>Overdue</option>
+                <option>Pending</option>
+              </select>
+              <button class="mini-button" id="exportInvoicesButton" type="button">Download CSV</button>
+              <button class="mini-button" id="printInvoicesButton" type="button">Print</button>
+            </div>
+            <div class="table-panel compact-table">
+              <table id="customerInvoicesTable">
+                <thead>
+                  <tr>
+                    <th>Customer bill</th>
+                    <th>Customer</th>
+                    <th>Due date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <div class="finance-module-panel" id="finance-budgeting">
+          <div class="submodule-row" aria-label="Budget sections">
+            <button type="button">Team budgets</button>
+            <button type="button">Planned vs actual spending</button>
+            <button type="button">Budget requests</button>
+            <button type="button">Future budget guesses</button>
+            <button type="button">Budget changes</button>
+            <button type="button">Spending limits</button>
+            <button type="button">Spending difference check</button>
+            <button type="button">Budget summaries</button>
+          </div>
+          <section class="erp-workspace">
+            <div class="panel-header">
+              <div>
+                <h3>Team Budgets</h3>
+                <p>Compare planned budgets with actual spending.</p>
+              </div>
+              <span>Budget control</span>
+            </div>
+            <div class="report-actions">
+              <button id="downloadBudgetButton" type="button">Download budget table</button>
+              <button id="printBudgetButton" type="button">Print budget table</button>
+            </div>
+            <div class="budget-table">
+              <article><span>Operations</span><strong>0</strong><progress max="100"></progress></article>
+              <article><span>Sales</span><strong>0</strong><progress max="100"></progress></article>
+              <article><span>Administration</span><strong>0</strong><progress max="100"></progress></article>
+            </div>
+          </section>
+        </div>
+
+        <div class="finance-module-panel" id="finance-payroll">
+          <div class="submodule-row" aria-label="Staff pay sections">
+            <button type="button">Employee salaries</button>
+            <button type="button">Allowances</button>
+            <button type="button">Money taken out</button>
+            <button type="button">Salary approvals</button>
+            <button type="button">Make payslips</button>
+            <button type="button">Salary history</button>
+            <button type="button">Tax money taken out</button>
+            <button type="button">Take-home salary</button>
+          </div>
+          <section class="erp-workspace">
+            <div class="panel-header">
+              <div>
+                <h3>Salary Records</h3>
+                <p>Review employee salary records and salary approval status.</p>
+              </div>
+              <span>Staff pay</span>
+            </div>
+            <div class="report-actions">
+              <button id="downloadPayrollButton" type="button">Download payroll table</button>
+              <button id="printPayrollButton" type="button">Print payroll table</button>
+            </div>
+            <div class="table-panel compact-table">
+              <table id="payrollTable">
+                <thead>
+                  <tr>
+                    <th>Employee</th>
+                    <th>Full salary</th>
+                    <th>Money taken out</th>
+                    <th>Take-home salary</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <div class="finance-module-panel" id="finance-reports">
+          <div class="submodule-row" aria-label="Money summary sections">
+            <button type="button">Profit and loss summary</button>
+            <button type="button">What we own and owe</button>
+            <button type="button">Money in/out summary</button>
+            <button type="button">Balance check summary</button>
+            <button type="button">Tax summaries</button>
+            <button type="button">Spending summary</button>
+            <button type="button">Money earned summary</button>
+            <button type="button">Monthly money summary</button>
+            <button type="button">Budget summary</button>
+              <button type="button">Salary summary</button>
+          </div>
+          <section class="erp-workspace">
+            <div class="panel-header">
+              <div>
+                <h3>Summary Center</h3>
+                <p>Prepare common reports for review or download.</p>
+              </div>
+              <span>Empty</span>
+            </div>
+            <div class="report-actions">
+              <button type="button">Download PDF</button>
+              <button type="button">Download Excel</button>
+              <button type="button">Download Word</button>
+              <button type="button">Print summary</button>
+              <button type="button">Plan monthly summary</button>
+            </div>
+          </section>
+        </div>
+
+        <div class="finance-module-panel" id="finance-approvals">
+          <div class="submodule-row" aria-label="Approvals sections">
+            <button type="button">Approve customer bills</button>
+            <button type="button">Approve spending</button>
+            <button type="button">Approve purchases</button>
+            <button type="button">Approve budgets</button>
+            <button type="button">Approve payments</button>
+              <button type="button">Approve salaries</button>
+            <button type="button">Approve money entries</button>
+            <button type="button">Approve suppliers</button>
+          </div>
+          <section class="erp-workspace">
+            <div class="panel-header">
+              <div>
+                <h3>Approval Queue</h3>
+                <p>Review money requests before they are handled.</p>
+              </div>
+              <span>Action needed</span>
+            </div>
+            <div class="approval-table" id="approvalQueue">
+              <article>
+                
+                <button class="mini-button approve-action" type="button">Approve</button>
+                <button class="mini-button reject-action" type="button">Reject</button>
+              </article>
+              <article>
+                
+                <button class="mini-button approve-action" type="button">Approve</button>
+                <button class="mini-button reject-action" type="button">Reject</button>
+              </article>
+            </div>
+            <div class="table-panel compact-table history-table">
+              <table id="approvalHistoryTable">
+                <thead>
+                  <tr>
+                    <th>Approved item</th>
+                    <th>Approved by</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <section class="activity-panel" aria-label="Finance activity">
+          <div class="panel-header">
+            <div>
+              <h3>Finance Activity</h3>
+              <p>Recent actions made in the Money Office.</p>
+            </div>
+            <span>Audit</span>
+          </div>
+          <ul id="financeActivityLog"></ul>
+        </section>
+      </section>
+
+      <div class="toast" id="financeToast" role="status" aria-live="polite" hidden></div>
+
+      <div class="modal-backdrop" id="financeModal" hidden>
+        <section class="finance-modal" role="dialog" aria-modal="true" aria-labelledby="financeModalTitle">
+          <div class="panel-header">
+            <h3 id="financeModalTitle">Money Details</h3>
+            <button class="mini-button" id="closeFinanceModal" type="button">Close</button>
+          </div>
+          <div id="financeModalBody"></div>
+        </section>
+      </div>
+
+      <section class="portal-section" id="sales">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Selling Office</p>
+            <h2>Customers, sales, price quotes, orders, and goals</h2>
+          </div>
+          <button class="primary-button" data-add-lead-button type="button">Add lead</button>
+        </div>
+
+        <section class="sales-message-bar" aria-label="Selling Office reminders">
+          <div>
+            <span class="message-green">Follow up with new possible customers today.</span>
+            <span class="message-blue">Send price quotes to customers who asked for prices.</span>
+            <span class="message-gold">Check sales still open before the day ends.</span>
+            <span class="message-red">Record every completed sale before closing.</span>
+            <span class="message-purple">Review sales goals and see what is still left.</span>
+          </div>
+        </section>
+
+        <section class="finance-tools-panel" aria-label="Sales tools">
+          <div class="finance-notices" id="salesNotices" aria-live="polite"></div>
+          <div class="report-actions finance-backup-actions">
+            <button id="exportSalesBackupButton" type="button">Export sales files</button>
+            <button id="importSalesBackupButton" type="button">Import sales backup</button>
+            <input id="salesBackupInput" type="file" accept="application/json" hidden />
+          </div>
+        </section>
+
+        <div class="sales-module-panel active" id="sales-dashboard">
+          <div class="submodule-row" aria-label="Sales home sections">
+            <button type="button" class="sales-home-item" data-sales-detail-target="total-sales">Total sales</button>
+            <button type="button" class="sales-home-item" data-sales-detail-target="monthly-sales-money">Money from sales this month</button>
+            <button type="button" class="sales-home-item" data-sales-detail-target="new-possible-customers">New possible customers</button>
+            <button type="button" class="sales-home-item" data-sales-detail-target="open-sales">Sales still open</button>
+            <button type="button" class="sales-home-item" data-sales-detail-target="completed-sales">Sales completed</button>
+            <button type="button" class="sales-home-item" data-sales-detail-target="people-who-bought">Buying customers</button>
+            <button type="button" class="sales-home-item" data-sales-detail-target="sales-goal-progress">Sales goal progress</button>
+            <button type="button" class="sales-home-item" data-sales-detail-target="top-customers">Top customers</button>
+            <button type="button" class="sales-home-item" data-sales-detail-target="recent-activities">Recent activities</button>
+          </div>
+          <section class="dashboard-detail" id="salesHomeDetail" hidden>
+            <div class="panel-header">
+              <div>
+                <h3 id="salesHomeDetailTitle">Total Sales</h3>
+                <p id="salesHomeDetailText">This shows all sales made by the business.</p>
+              </div>
+              <span id="salesHomeDetailLabel">Selling home</span>
+            </div>
+            <div class="sales-filter" id="salesTotalFilter" hidden>
+              <label>
+                Show sales by
+                <select id="salesPeriodType">
+                  <option value="day">Day</option>
+                  <option value="month">Month</option>
+                  <option value="year">Year</option>
+                </select>
+              </label>
+              <label>
+                Choose
+                <select id="salesPeriodValue"></select>
+              </label>
+            </div>
+            <div class="dashboard-breakdown" id="salesHomeBreakdown"></div>
+          </section>
+
+          <section class="erp-workspace sales-standard-workspace">
+            <div class="panel-header">
+              <div>
+                <h3>Sales Work</h3>
+                <p>Add customers, quotes, orders, and follow-ups in one place.</p>
+              </div>
+              <span>Standard forms</span>
+            </div>
+            <div class="sales-goal-card">
+              <div>
+                <span>Monthly sales goal</span>
+                <strong>0</strong>
+              </div>
+              <progress max="100"></progress>
+              <small>No sales goal set.</small>
+            </div>
+            <div class="sales-form-grid">
+              <form class="erp-form stacked-form" id="possibleCustomerForm">
+                <h4>Add possible customer</h4>
+                <label>Name <input name="name" placeholder="" required /></label>
+                <label>Phone <input name="phone" placeholder="" required /></label>
+                <label>Status
+                  <select name="status">
+                    <option>New</option>
+                    <option>Interested</option>
+                    <option>Waiting</option>
+                    <option>Bought</option>
+                  </select>
+                </label>
+                <label>Follow-up date <input name="followUpDate" type="date" required /></label>
+                <label>Next action <input name="nextAction" placeholder="" required /></label>
+                <button class="primary-button" type="submit">Add possible customer</button>
+              </form>
+              <form class="erp-form stacked-form" id="customerForm">
+                <h4>Add customer</h4>
+                <label>Name <input name="name" placeholder="" required /></label>
+                <label>Phone <input name="phone" placeholder="" required /></label>
+                <label>Status
+                  <select name="status">
+                    <option>New</option>
+                    <option>Interested</option>
+                    <option>Waiting</option>
+                    <option>Bought</option>
+                  </select>
+                </label>
+                <label>Follow-up date <input name="followUpDate" type="date" required /></label>
+                <label>Next action <input name="nextAction" placeholder="" required /></label>
+                <button class="primary-button" type="submit">Add customer</button>
+              </form>
+              <form class="erp-form stacked-form" id="priceQuoteForm">
+                <h4>Add price quote</h4>
+                <label>Quote number <input name="number" placeholder="" required /></label>
+                <label>Customer <input name="customer" placeholder="" required /></label>
+                <label>Amount <input name="amount" type="number" min="1" placeholder="" required /></label>
+                <label>Follow-up date <input name="followUpDate" type="date" required /></label>
+                <label>Next action <input name="nextAction" placeholder="" required /></label>
+                <button class="primary-button" type="submit">Add price quote</button>
+              </form>
+              <form class="erp-form stacked-form" id="salesOrderForm">
+                <h4>Add order</h4>
+                <label>Order number <input name="number" placeholder="" required /></label>
+                <label>Customer <input name="customer" placeholder="" required /></label>
+                <label>Amount <input name="amount" type="number" min="1" placeholder="" required /></label>
+                <label>Follow-up date <input name="followUpDate" type="date" required /></label>
+                <label>Next action <input name="nextAction" placeholder="" required /></label>
+                <button class="primary-button" type="submit">Add order</button>
+              </form>
+            </div>
+            <div class="table-tools">
+              <input id="salesTableSearch" placeholder="Search sales work" />
+              <select id="salesStatusFilter">
+                <option>All statuses</option>
+                <option>New</option>
+                <option>Interested</option>
+                <option>Waiting</option>
+                <option>Bought</option>
+              </select>
+            </div>
+            <div class="table-panel compact-table">
+              <table id="salesWorkTable">
+                <thead>
+                  <tr>
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Follow-up date</th>
+                    <th>Next action</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <div class="sales-module-panel" id="sales-leads">
+          <div class="submodule-row" aria-label="Possible customer sections">
+            <button type="button" class="sales-lead-item" data-sales-lead-target="new-possible-customers">New possible customers</button>
+            <button type="button" class="sales-lead-item" data-sales-lead-target="where-they-came-from">Where they came from</button>
+            <button type="button" class="sales-lead-item" data-sales-lead-target="customer-status">Customer status</button>
+            <button type="button" class="sales-lead-item" data-sales-lead-target="sales-person-in-charge">Sales person in charge</button>
+            <button type="button" class="sales-lead-item" data-sales-lead-target="follow-ups">Follow-ups</button>
+            <button type="button" class="sales-lead-item" data-sales-lead-target="people-who-bought">Buying customers</button>
+          </div>
+          <section class="dashboard-detail" id="salesLeadDetail" hidden>
+            <div class="panel-header">
+              <div>
+                <h3 id="salesLeadDetailTitle">New possible customers</h3>
+                <p id="salesLeadDetailText">Select an item to view details.</p>
+              </div>
+              <span id="salesLeadDetailLabel">Possible customers</span>
+            </div>
+            <div class="dashboard-breakdown" id="salesLeadBreakdown"></div>
+          </section>
+        </div>
+
+        <div class="sales-module-panel" id="sales-customers">
+          <div class="submodule-row" aria-label="Customers sections">
+            <button type="button">Customer list</button>
+            <button type="button">Customer details</button>
+            <button type="button">Contact details</button>
+            <button type="button">Things customer bought</button>
+            <button type="button">Customer status</button>
+            <button type="button">Customer notes</button>
+          </div>
+        </div>
+
+        <div class="sales-module-panel" id="sales-opportunities">
+          <div class="submodule-row" aria-label="Possible sales sections">
+            <button type="button">Sales opportunities</button>
+            <button type="button">Opportunity amounts</button>
+            <button type="button">Sale step</button>
+            <button type="button">Expected finish date</button>
+            <button type="button">Chance of winning</button>
+            <button type="button">Sales person in charge</button>
+          </div>
+        </div>
+
+        <div class="sales-module-panel" id="sales-quotations">
+          <div class="submodule-row" aria-label="Price quote sections">
+            <button type="button">Make price quote</button>
+            <button type="button">Sent price quotes</button>
+            <button type="button">Accepted price quotes</button>
+            <button type="button">Rejected price quotes</button>
+            <button type="button">Price quote end date</button>
+          </div>
+        </div>
+
+        <div class="sales-module-panel" id="sales-orders">
+          <div class="submodule-row" aria-label="Orders sections">
+            <button type="button">Sales orders</button>
+            <button type="button">Order status</button>
+            <button type="button">Delivery status</button>
+            <button type="button">Order amount</button>
+            <button type="button">Customer past orders</button>
+          </div>
+        </div>
+
+        <div class="sales-module-panel" id="sales-sales-invoices">
+          <div class="submodule-row" aria-label="Customer bill sections">
+            <button type="button">Customer bill list</button>
+            <button type="button">Paid customer bills</button>
+            <button type="button">Unpaid customer bills</button>
+            <button type="button">Late customer bills</button>
+            <button type="button">Customer bill status</button>
+          </div>
+        </div>
+
+        <div class="sales-module-panel" id="sales-targets">
+          <div class="submodule-row" aria-label="Goal sections">
+            <button type="button">Monthly goals</button>
+            <button type="button">Sales person goals</button>
+            <button type="button">Team goals</button>
+            <button type="button">Goals reached</button>
+            <button type="button">Goals left</button>
+          </div>
+        </div>
+
+        <div class="sales-module-panel" id="sales-reports">
+          <div class="submodule-row" aria-label="Sales summary sections">
+            <button type="button">Sales summary</button>
+            <button type="button">Money from sales summary</button>
+            <button type="button">Buying customers summary</button>
+            <button type="button">Customer summary</button>
+            <button type="button">Sales person work summary</button>
+            <button type="button">Product sales summary</button>
+            <button type="button">Monthly sales summary</button>
+          </div>
+          <section class="erp-workspace">
+            <div class="panel-header">
+              <div>
+                <h3>Sales Report Downloads</h3>
+                <p>Download or print the selected sales summary.</p>
+              </div>
+              <span>Empty</span>
+            </div>
+            <div class="report-actions">
+              <button id="downloadSalesSummaryButton" type="button">Download selected summary</button>
+              <button id="printSalesSummaryButton" type="button">Print selected summary</button>
+            </div>
+          </section>
+        </div>
+
+        <section class="activity-panel" aria-label="Sales activity">
+          <div class="panel-header">
+            <div>
+              <h3>Sales Activity</h3>
+              <p>Recent actions made in the Selling Office.</p>
+            </div>
+            <span>Audit</span>
+          </div>
+          <ul id="salesActivityLog"></ul>
+        </section>
+      </section>
+
+      <section class="portal-section" id="analytics">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Business Check</p>
+            <h2>Simple numbers that show how the business is doing</h2>
+          </div>
+          <button class="primary-button">Build home page</button>
+        </div>
+
+        <section class="analytics-message-bar" aria-label="Business Check reminders">
+          <div>
+            <span class="analytics-message-mauve">Check today's business numbers before making decisions.</span>
+            <span class="analytics-message-red">Review money in and out to understand cash movement.</span>
+            <span class="analytics-message-purple">Watch sales growth and see if targets are on track.</span>
+            <span class="analytics-message-rose">Check active customers and follow up where needed.</span>
+            <span class="analytics-message-plum">Use monthly results to plan the next business move.</span>
+          </div>
+        </section>
+
+        <section class="finance-tools-panel" aria-label="Business Check tools">
+          <div class="finance-notices" id="analyticsNotices" aria-live="polite"></div>
+          <div class="report-actions finance-backup-actions">
+            <button id="exportAnalyticsBackupButton" type="button">Export analytics backup</button>
+            <button id="importAnalyticsBackupButton" type="button">Import analytics backup</button>
+            <input id="analyticsBackupInput" type="file" accept="application/json" hidden />
+          </div>
+        </section>
+
+        <div class="analytics-module-panel active" id="analytics-dashboard">
+          <div class="submodule-row" aria-label="Business home sections">
+            <button type="button" class="analytics-home-item" data-analytics-home-target="total-money-earned">Total money earned</button>
+            <button type="button" class="analytics-home-item" data-analytics-home-target="total-sales">Total sales</button>
+            <button type="button" class="analytics-home-item" data-analytics-home-target="total-money-spent">Total money spent</button>
+            <button type="button" class="analytics-home-item" data-analytics-home-target="profit-percentage">Profit percentage</button>
+            <button type="button" class="analytics-home-item" data-analytics-home-target="active-customers">Active customers</button>
+            <button type="button" class="analytics-home-item" data-analytics-home-target="sales-growth">Sales growth</button>
+            <button type="button" class="analytics-home-item" data-analytics-home-target="money-in-and-out">Money in and out</button>
+            <button type="button" class="analytics-home-item" data-analytics-home-target="monthly-work-result">Monthly work result</button>
+          </div>
+          <section class="dashboard-detail" id="analyticsHomeDetail" hidden>
+            <div class="panel-header">
+              <div>
+                <h3 id="analyticsHomeDetailTitle">Business details</h3>
+                <p id="analyticsHomeDetailText">Select an item to view details.</p>
+              </div>
+              <span id="analyticsHomeDetailLabel">Business home</span>
+            </div>
+            <div class="dashboard-breakdown" id="analyticsHomeBreakdown"></div>
+          </section>
+
+          <section class="erp-workspace analytics-standard-workspace">
+            <div class="panel-header">
+              <div>
+                <h3>Business Charts</h3>
+                <p>Use day, month, or year to check the main numbers.</p>
+              </div>
+              <span>Business check</span>
+            </div>
+            <div class="sales-filter">
+              <label>
+                Show by
+                <select id="analyticsDateFilter">
+                  <option value="day">Day</option>
+                  <option value="month" selected>Month</option>
+                  <option value="year">Year</option>
+                </select>
+              </label>
+            </div>
+            <div class="simple-chart-grid analytics-chart-grid">
+              <article style="--value: 0%">
+                <span>Sales growth</span>
+                <strong id="analyticsSalesGrowth">0</strong>
+                <div class="simple-bar"><i></i></div>
+              </article>
+              <article style="--value: 0%">
+                <span>Spending</span>
+                <strong id="analyticsSpending">0</strong>
+                <div class="simple-bar"><i></i></div>
+              </article>
+              <article style="--value: 0%">
+                <span>Active customers</span>
+                <strong id="analyticsActiveCustomers">0</strong>
+                <div class="simple-bar"><i></i></div>
+              </article>
+            </div>
+            <div class="compare-grid">
+              <article>
+                <span>This month</span>
+                <strong>0</strong>
+                <small>64 completed sales</small>
+              </article>
+              <article>
+                <span>Last month</span>
+                <strong>0</strong>
+                <small>63 completed sales</small>
+              </article>
+              <article>
+                <span>Difference</span>
+                <strong>0</strong>
+                <small>Sales improved by 2%</small>
+              </article>
+            </div>
+            <div class="warning-section" aria-label="Business warnings">
+              <article>
+                <span>Watch spending</span>
+                <strong>0</strong>
+              </article>
+              <article>
+                <span>Sales change</span>
+                <strong>Growth is slower this month</strong>
+              </article>
+              <article>
+                <span>Customer follow-up</span>
+                <strong>0</strong>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <div class="analytics-module-panel" id="analytics-kpis">
+          <div class="submodule-row" aria-label="Key number sections">
+            <button type="button">Money earned number</button>
+            <button type="button">Sales number</button>
+            <button type="button">Money spent number</button>
+            <button type="button">Profit number</button>
+            <button type="button">Customer growth number</button>
+            <button type="button">Buying customers number</button>
+            <button type="button">Budget number</button>
+            <button type="button">Work score</button>
+          </div>
+        </div>
+
+        <div class="analytics-module-panel" id="analytics-financial-analytics">
+          <div class="submodule-row" aria-label="Money check sections">
+            <button type="button">Money earned changes</button>
+            <button type="button">Money spent changes</button>
+            <button type="button">Profit check</button>
+            <button type="button">Money in and out check</button>
+            <button type="button">Budget difference</button>
+            <button type="button">Cost check</button>
+            <button type="button">Money comparison</button>
+          </div>
+        </div>
+
+        <div class="analytics-module-panel" id="analytics-sales-analytics">
+          <div class="submodule-row" aria-label="Sales check sections">
+            <button type="button">Sales changes</button>
+            <button type="button">Buying customers</button>
+            <button type="button">Sales progress check</button>
+            <button type="button">Top products</button>
+            <button type="button">Top salespeople</button>
+            <button type="button">Regional sales</button>
+            <button type="button">Monthly sales comparison</button>
+          </div>
+        </div>
+
+        <div class="analytics-module-panel" id="analytics-customer-analytics">
+          <div class="submodule-row" aria-label="Customer check sections">
+            <button type="button">Customer growth</button>
+            <button type="button">Customers who came back</button>
+            <button type="button">Customer groups</button>
+            <button type="button">Customer value</button>
+            <button type="button">New vs returning customers</button>
+            <button type="button">Customer activity</button>
+          </div>
+        </div>
+
+        <div class="analytics-module-panel" id="analytics-forecasting">
+          <div class="submodule-row" aria-label="Forecast sections">
+            <button type="button">Money earned guess</button>
+            <button type="button">Sales guess</button>
+            <button type="button">Money spent guess</button>
+            <button type="button">Money in and out guess</button>
+            <button type="button">Demand guess</button>
+            <button type="button">Growth guess</button>
+          </div>
+        </div>
+
+        <div class="analytics-module-panel" id="analytics-reports">
+          <div class="submodule-row" aria-label="Business summary sections">
+            <button type="button">Manager summary</button>
+            <button type="button">Money summary</button>
+            <button type="button">Sales summary</button>
+            <button type="button">Customer summary</button>
+            <button type="button">Work result summary</button>
+            <button type="button">Monthly business summary</button>
+          </div>
+          <section class="erp-workspace">
+            <div class="panel-header">
+              <div>
+                <h3>Report Downloads</h3>
+                <p>Download the main business summaries when needed.</p>
+              </div>
+              <span>Empty</span>
+            </div>
+            <div class="report-actions">
+              <button id="downloadManagerReport" type="button">Download manager report</button>
+              <button id="downloadMoneyReport" type="button">Download money report</button>
+              <button id="downloadSalesReport" type="button">Download sales report</button>
+              <button id="downloadCustomerReport" type="button">Download customer report</button>
+              <button id="downloadAnalyticsExcelButton" type="button">Download Excel</button>
+              <button id="downloadAnalyticsPdfButton" type="button">Download PDF</button>
+              <button id="downloadAnalyticsCsvButton" type="button">Download CSV</button>
+              <button id="downloadAnalyticsWordButton" type="button">Download Word</button>
+            </div>
+          </section>
+        </div>
+
+        <div class="analytics-module-panel" id="analytics-data-export">
+          <div class="submodule-row" aria-label="Download file sections">
+            <button type="button">Download Excel</button>
+            <button type="button">Download PDF</button>
+            <button type="button">Download CSV</button>
+            <button type="button">Planned downloads</button>
+            <button type="button">Custom summary download</button>
+          </div>
+        </div>
+
+        <section class="activity-panel" aria-label="Analytics activity">
+          <div class="panel-header">
+            <div>
+              <h3>Analytics Activity</h3>
+              <p>Recent actions made in Business Check.</p>
+            </div>
+            <span>Audit</span>
+          </div>
+          <ul id="analyticsActivityLog"></ul>
+        </section>
+      </section>
+    </main>
+
+    <script src="finance.js?v=empty-data-2"></script>
+  </body>
+</html>
+ 
