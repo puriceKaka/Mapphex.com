@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#03070f">
+    <meta name="description" content="MAPPHEX ERP customer portal for orders, support, payments, and personalized self-service.">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <title>MAPPHEX ERP - Customer</title>
+    <link rel="stylesheet" href="mapphex.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer crossorigin="anonymous"></script>
+  </head>
+  <body data-portal="customer">
+    <noscript>
+      <div class="noscript-notice">JavaScript is required to use this portal. Enable JavaScript and reload the page.</div>
+    </noscript>
+    <div class="ambient one"></div>
+    <div class="ambient two"></div>
+    <section class="auth-screen" id="authScreen">
+      <div class="auth-card">
+        <div class="brand">
+          <div class="brand-mark">MX</div>
+          <div>
+            <strong>MAPPHEX ERP</strong>
+            <small>Customer Portal Access</small>
+          </div>
+        </div>
+        <div class="auth-tabs">
+          <button class="auth-tab active" type="button" data-auth-tab="login">Login</button>
+          <button class="auth-tab" type="button" data-auth-tab="register">Register</button>
+        </div>
+        <form class="auth-form active" data-auth-form="login">
+          <label>Customer ID or Personal Email<input required data-login-email placeholder="MX-CUST-2026-0001 or yourname@gmail.com"></label>
+          <label>Password<input type="password" required placeholder="Enter password"></label>
+          <button class="primary-action active" type="submit" data-login-submit aria-disabled="false">Access Customer Portal</button>
+          <button class="auth-link" type="button" data-auth-tab="forgot">Forgot Password</button>
+        </form>
+        <form class="auth-form" data-auth-form="register">
+          <label>Full Name<input required data-full-name placeholder="Customer name"></label>
+          <label>Personal Email<input type="email" required data-recovery-email placeholder="yourname@gmail.com"></label>
+          <label>Account Type<select required data-user-role><option>Buyer</option><option>Finance</option><option>Support</option><option>Admin Contact</option></select></label>
+          <label>Create Password<input type="password" required placeholder="Create password"></label>
+          <label>Confirm Password<input type="password" required placeholder="Confirm password"></label>
+          <button class="primary-action" type="submit">Create Customer Account</button>
+        </form>
+        <form class="auth-form" data-auth-form="forgot">
+          <label>Personal Recovery Email<input type="email" required data-recovery-email placeholder="yourname@gmail.com"></label>
+          <button class="mini-button" type="button" data-send-code="forgot">Send Email Code</button>
+          <label>Verification Code<input required inputmode="numeric" maxlength="6" placeholder="Enter email code"></label>
+          <label>New Password<input type="password" required placeholder="Create new password"></label>
+          <label>Confirm Password<input type="password" required placeholder="Confirm new password"></label>
+          <button class="primary-action" type="submit">Change Password</button>
+          <button class="auth-link" type="button" data-auth-tab="login">Back to Login</button>
+        </form>
+      </div>
+    </section>
+    <main class="app-shell" data-theme="dark" role="main">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">MX</div>
+          <div>
+            <strong>MAPPHEX ERP</strong>
+            <small>Enterprise Suite</small>
+          </div>
+        </div>
+        <button class="sidebar-toggle" type="button">Collapse</button>
+        <div class="section-label">Modules</div>
+        <nav id="navStack" class="nav-stack" aria-label="ERP modules"></nav>
+        <section class="sidebar-card">
+          <div class="section-label">Pinned</div>
+          <div id="pinList" class="pin-list"></div>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <header class="topbar">
+          <button class="mobile-menu" type="button" aria-label="Open navigation" title="Open navigation">Menu</button>
+          <button id="pagesButton" class="pages-button" type="button" aria-expanded="false" aria-controls="pageDrawer"><span class="hamburger-lines"></span>Pages</button>
+          <div class="search-wrap">
+            <input id="globalSearch" type="search" autocomplete="off" aria-label="Global search" aria-controls="suggestions" aria-expanded="false">
+            <button id="voiceButton" type="button">Voice</button>
+            <div id="suggestions" class="suggestions" role="listbox"></div>
+          </div>
+          <button id="commandButton" type="button">Command</button>
+          <button id="themeToggle" type="button">Light</button>
+          <button id="passwordButton" type="button">Password</button>
+          <button id="logoutButton" type="button">Logout</button>
+        </header>
+
+        <section class="hero-panel">
+          <div>
+            <div id="portalEyebrow" class="eyebrow"></div>
+            <h1 id="portalTitle"></h1>
+            <p id="portalDescription"></p>
+          </div>
+          <div class="hero-actions">
+            <button class="primary-action" type="button">Export</button>
+            <button class="ghost-action" type="button">Live Center</button>
+          </div>
+        </section>
+
+        <section id="dashboard" class="dashboard-grid" aria-live="polite"></section>
+      </section>
+
+    </main>
+
+    <aside id="pageDrawer" class="page-drawer">
+      <div class="panel-heading">
+        <div>
+          <div class="section-label">Portal Pages</div>
+          <h2>Customer modules</h2>
+        </div>
+        <button id="closePageDrawer" type="button">Close</button>
+      </div>
+      <div id="pageDrawerList"></div>
+    </aside>
+
+    <dialog id="commandPalette" class="command-palette">
+      <input id="commandInput" placeholder="Type a command or page name">
+      <div id="commandResults"></div>
+    </dialog>
+    <script src="mapphex.js" defer></script>
+  </body>
+</html>
